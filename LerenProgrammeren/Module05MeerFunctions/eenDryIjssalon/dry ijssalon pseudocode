@@ -1,0 +1,40 @@
+# dry ijssalon M05.PA.O1 - Een programma voorbereiden -> pseudocode 
+
+# print('Welkom bijPapi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.')
+
+# def stap 1
+# while true:
+#     hoeveelbolletjes = input('hoeveel bolletjes?')
+#     if hoeveelbolletjes is 1 t/m 3 --> naar stap 2 !!!
+#         stap 2 
+#     elif hoeveelbolletjes is 4 t/m 8
+#         stap 3
+#     elif hoeveelbolletjes is groter dan 8 
+#         print('te veel')
+#         stap 1 
+#     else
+#         print('dat ken ik niet')
+#         stap 1 
+# !!!  return aantal bolltetjes 
+
+# def stap 2 
+# while true
+#   keuzebakjehoorntje = input(wil u (hoeveelbolletjes) in een bakje of hoorntje)
+#       if keuzebakjehoorntje == bakje of hoorntje 
+#           stap 3 
+#       else 
+#           print(sorry dat ken ik niet)
+#           stap 2 
+
+# def stap 3 
+# while true
+#   print('Hier is uw {hoorntje/bakje}met {aantal}bolletje(s)')
+#   input('wilt u nog meer bestellen?')
+#   if input is ja:
+#       stap 1 
+#   elif input is nee:
+#       print('bedankt en nog een fijne dag verder')
+#       exit
+#   else:
+#       print('dat ken ik niet')
+#       terug naar input 

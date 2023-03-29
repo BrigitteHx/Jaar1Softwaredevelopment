@@ -1,0 +1,36 @@
+M04.PA.O2 - Pseudocode
+
+namen_lijst = [], [] (2 maken ivm 2 lijsten later)
+aantal_namen = 0
+
+while true:
+    keuze_naam = input = wilt u een naam toevoegen? 
+    if keuze_naam == ja
+        naam_invoer = input = voer een unieke naam in   
+        if naam_invoer == in namen_lijst
+            terug naar begin
+        else
+        nieuwe_naam = naam_invoer 
+        nieuwe_naam.append(namen_lijst)
+        aantal_namen =+ 1
+        terug naar naam invoer 
+    elif keuze_naam == nee and aantal_namen => 3
+        for len namen_lijst:
+        voeg naam toe aan dictionary (append met def of filler functie, nog uitzoeken!! )
+        break
+    elif keuze_naam == nee en aantal_namen < 3
+        print (niet genoeg namen, voeg meer toe)
+        terug naar begin of break met error ( nog uitzoeken!! )
+
+lootjes = true (gebruiken while loop)
+
+while lootjes = true 
+    namen_doorelkaar = namen_lijst.shuffle() (kan ook met random sample of randint dacht ik)
+    for naam in namenlijst:
+        randint range len(namen_lijst)
+        if namen_doorelkaar[naam] == namen_lijst[naam] (koppelen)
+            namen_doorelkaar = True (checkt of verschillende naam)
+
+    for lengte in namen_lijst
+    lootjeseind = namenlijst[naam] met namen_doorelkaar [naam]
+    print(lootjeseind)

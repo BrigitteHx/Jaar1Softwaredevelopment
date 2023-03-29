@@ -1,0 +1,13 @@
+Planning 08 - 03 - 2023:
+
+Leren Programmeren: [IN PROGRESS]
+- Ik ga werken aan opgave 13 van de teasure hunt, hier ben ik al een tijdje mee bezig en ben inmiddels zo ver dat de helft van de testen correct zijn. Mijn streven is om deze aan het einde van de dag af en werkend te hebben. 
+
+Dynamische User Interfaces: [IN PROGRESS]
+- Ik ga werken aan de Horeca App, ik ben bij een CJV en heb tijdens mijn eerste poging feedback gekregen op deze opdracht. Ik weet waar ik hem ga ga verbeteren. Mijn streven is om deze aan het einde van de dag af en werkend te hebben.
+
+Statische Front-end: [COMPLETED]
+- Ik ben op dit moment bij de Realisatie van mobiele versie van mij CV/ portefolio. Ik wil hier vandaag graag nog extra re-search op doen omdat ik dit een lastig stukje binnen de HTML vindt. Aan het einde van de dag wil ik een plan hebben opgesteld hoe ik deze ga realiseren en of ik nog extra uitleg nodig heb op dit gebied. Het is mijn streven om deze opdracht uiterlijk vrijdag af te hebben.
+
+Soft skills: [COMPLETED]
+- Thuis ga ik verder aan ons soft skills spel, hierbij ben ik de laatste details van her spelbord aan het maken en de kaartjes maak ik gereed for gebruik. 

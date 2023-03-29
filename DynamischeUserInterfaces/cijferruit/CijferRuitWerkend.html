@@ -1,0 +1,57 @@
+<!-- klad -->
+<body id = "body">
+
+    <style>
+        body {
+            text-align: center;
+            font-family: monospace;
+        }
+    </style>
+
+</body>
+
+    <script>
+
+    body = document.getElementById("body");
+
+    let amount  = Number(prompt("Voor welk getal wilt u een ruit zien?"));
+    lineArray = [];
+
+    // bovenkant
+    for (let lineNumber =1; lineNumber <= amount; lineNumber++){
+        lineArray.push(lineNumber);
+        line = lineArray.join('-');
+
+        let element = document.createElement("p");
+        element.innerHTML = line; 
+        body.appendChild(element);
+    }
+
+    // onderkant 
+    for (let lineNumber = amount; lineNumber >=0; lineNumber--){
+        lineArray.pop();
+        line = lineArray.join('-');
+
+        let element = document.createElement("p");
+        element.innerHTML = line; 
+        body.appendChild(element);
+    }
+
+
+// uitleg meneer slemmer ------------------------------------------------------------------------------------------------
+//     // //  line numbers 1 -> 5:
+//     // for (let number = 1; number <= lineNumber; number++){
+//     //     if (number > 1){
+//     //         line += '-'
+//     //     }
+
+//     //     line += number.toString();
+//     // }
+
+
+// line spaces --------------------------------------------------------------------------------------------------------
+// for (let spaceNumber = 1; spaceNumber <= amount - lineNumber; spaceNumber++){
+//     line = '&nbsp;' + line; 
+// }
+
+</script>

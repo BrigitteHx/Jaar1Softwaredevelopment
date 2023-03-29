@@ -1,0 +1,39 @@
+# fruitmandopdracht12
+
+from fruitmand import fruitmand
+
+# Print de kleur, het gewicht en naam zoals onderstaand voorbeeld
+# (dus volledig Nederlands) van het fruit met de langste naam, je mag alleen de code het juiste stuk fruit laten kiezen.
+
+def LangsteNaamFruit(fruitmand):
+    return max(fruitmand, key=lambda fruit:len(fruit['name']))
+
+fruit= LangsteNaamFruit(fruitmand)
+    
+totaalletters = len(fruit['name'])
+naam = fruit['name']
+kleur = fruit['color']
+gewicht = fruit['weight']
+
+vertaling = {"yellow":"geel","green":"groen", "orange":"oranje", "red":"rood", "brown":"bruin"} 
+
+print(f"De {naam} heeft de langste naam, is {vertaling[kleur]} en weegt {gewicht} gram. ")
+
+# uitgelegd functie max en vertalen meneer slemmer: 
+
+# translation = {"yellow":"geel","green":"groen"} 
+# kleur = "yellow"
+
+# print(f"Is deze banaan {translation[kleur]}")
+
+# translation = {"yellow":"geel","green":"groen"}  
+
+# def fruit_longest_word2(fruitmand):
+#     fruitmax = fruitmand[0]
+#     for i in range(1, len(fruitmand)):
+#         fruit = fruitmand[i]
+#         if len(fruit['name'])>len(fruitmax['name']):
+#             fruitmax = fruit
+#     return fruitmax
+
+# print(fruit_longest_word2(fruitmand))

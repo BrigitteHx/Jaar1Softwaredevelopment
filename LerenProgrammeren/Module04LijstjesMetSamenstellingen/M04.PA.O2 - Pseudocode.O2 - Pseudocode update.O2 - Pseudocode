@@ -1,0 +1,35 @@
+M04.PA.O2 - Pseudocode
+
+namen_lijst = [], {} (2 maken ivm 2 lijsten later)
+aantal_namen = 0
+
+gedurende begin:
+    keuze_naam = wilt u een naam toevoegen? 
+    als u een naam wilt toevoegen
+        naam_invoer = voer een unieke naam in   
+        als de naam al in de lijst staat
+            terug naar begin
+        anders
+        nieuwe_naam = naam_invoer 
+        nieuwe_naam toevoegen aan namen_lijst
+        aantal_namen = + 1 naam
+        terug naar naam invoer 
+    of als u geen naam wilt toevoegen en aantal_namen => 3
+        for de gehele namen_lijst
+        voeg naam toe aan dictionary of tweede lijst
+    of als u geen naam wilt toevoegen en aantal_namen < 3
+        print (niet genoeg namen, voeg meer toe)
+        terug naar begin of break met error
+
+lootjes = waar (gebruiken while loop)
+
+gedurende lootjes = waar 
+    namen_doorelkaar = namen_lijst door elkaar shuffelen
+    voor iedere naam in namenlijst:
+        random keuze uit namen_lijst
+        als de naam van namen_lijst en namen_doorelkaar hetzelfde zijn
+            namen_doorelkaar = True, doet koppelen opnieuw ^
+
+voor de gehele lengte van namen_lijst
+    lootjeseind = namenlijst[naam] met namen_doorelkaar[naam] (koppelen verschillende en zetten deze in lootjeseind)
+    print(lootjeseind)

@@ -1,0 +1,33 @@
+
+.button{
+    background-color: rgb(255, 194, 147);
+}
+
+.fakeButtonC{
+    border-radius: 5px;
+    border: 1px black solid;
+    background-color: rgb(241, 171, 171);
+    padding: 3px;
+}
+
+body{
+    background-color: rgb(249, 252, 207);
+}
+
+/* #button1 {
+    background-color: rgb(255, 194, 147);
+} */                            
+
+/* ^ script kijkt naar # (id) over . (class) */
+
+.blue{
+    background-color: rgb(10, 199, 228);
+    color:white
+}
+
+/* #fakeButton{
+    border-radius: 5px;
+    border: 1px black solid;
+    background-color: grey;
+    padding: 3px;
+} */
