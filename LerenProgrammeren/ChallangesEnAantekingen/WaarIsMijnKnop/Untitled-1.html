@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Knop</title>
+    <style>
+
+        @font-face {
+            font-family: topSecret;
+            src: url(TopSecretStamp.ttf);
+        }
+        button {
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			color: white;
+            font-family: topSecret;
+		}
+		button:hover {
+			background-color: red;
+			text-decoration: underline;
+            /* font-family: topSecret; */
+		}
+    </style>
+</head>
+<body>
+    
+    <h1>welkom</h1>
+
+    <script>
+        var button = document.createElement('button'); // maak
+        document.body.appendChild('button'); // naar body
+        button.innerHTML = "klik"
+
+    </script>
+</body>
+</html>
