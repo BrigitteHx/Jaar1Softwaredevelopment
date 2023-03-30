@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <title>WaarIsMijnKnop</title>
+	<title>button</title>
+	<style>
+
+        @font-face {
+            font-family: topSecret;
+            src: url(TopSecretStamp.ttf);
+        }
+		#button {
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			color: white;
+            font-family: topSecret;
+		}
+		#button:hover {
+			background-color: red;
+			text-decoration: underline;
+            /* font-family: topSecret; */
+		}
+
+	</style>
 </head>
 <body>
-    
+
+	<h1 id="welcome">welkom</h1>
+
+	<button id="button" onclick="handleClick()">klik hier</button>
+
+	<script>
+
+		function handleClick(){
+			var welcome = document.getElementById("welcome");
+
+		 	var button = document.getElementById("button");
+
+		 	if (button.innerHTML === "klik hier") {
+		 		button.innerHTML = "klik nog eens";
+		 		welcome.innerHTML = "welkom brigitte";
+		 	} else {
+		 		button.style.display = "none";
+		 	}
+		}
+
+        // NIET GOED:
+        // function handleClick(clickEvent){
+
+        //     if (clickEvent.target.id == "button"){                      
+        //         clickEvent.target.id.add("button:hover") ;             
+        //     }
+        //     else if (clickEvent.target.id == "button:hover"){
+        // 		button.innerHTML = "klik nog eens";
+		// 		welcome.innerHTML = "welkom brigitte";
+        //     }
+        //     else {
+        //         button.style.display = "none";
+        //     }
+
+        //     button.onclick = handleClick;
+
+	</script>
+
 </body>
 </html>
+
