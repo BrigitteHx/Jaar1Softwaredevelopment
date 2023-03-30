@@ -85,18 +85,18 @@ Zorg dat alle Ferraris een rood lettertype hebben -->
 		cars.sort();
 
 		let list = document.getElementById("myList");
-
 		cars.forEach((car)=>{
-			let ul = document.createElement("ul");
-			ul.innerText = car;
+			var li = document.createElement("li");
+			li.textContent = car;
 			if (car.includes("Ferrari")) {
-				ul.classList.add("red");
+				li.classList.add("red");
 			}
-			list.appendChild(ul);
+			list.appendChild(li);
 		})
 	</script>
 </body>
 </html>
+
 
 
 
@@ -105,3 +105,13 @@ Zorg dat alle Ferraris een rood lettertype hebben -->
         cars[i].style.color = 'red';
         }
     } -->
+
+    <!-- let data = ["item1", "item2", "item3", "item4"];
+    let list = document.getElementById("UnList");
+    var fragList = document.createDocumentFragment();
+    data.forEach(function (item) {
+       var li = document.createElement('li');
+       li.textContent = item;
+       fragList.appendChild(li);
+    });
+    list.appendChild(fragList); -->
