@@ -1,0 +1,107 @@
+
+<!-- Maak een HTML pagina waarop alle Auto’s in een lijst worden getoond.
+
+Maak gebruik van de Cars lijst die onder deze opdracht staat.
+
+Maak een HTML pagina met een lege body
+Voeg doormiddel van je javascript een ‘unordered list’ toe (maximaal 1)
+In deze list toon je alle auto’s
+Zorg dat de auto’s gesorteerd zijn
+Zorg dat alle Ferraris een rood lettertype hebben -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.red {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<ul id="myList"></ul>
+	<script>
+		let cars = [
+			"Audi A3",
+			"BMW 3 Series",
+			"Chevrolet Camaro",
+			"Dodge Charger",
+			"Ford Mustang",
+			"Honda Civic",
+			"Infiniti Q50",
+			"Jaguar F-Type",
+			"Kia Optima",
+			"Lamborghini Huracan",
+			"Mercedes-Benz C-Class",
+			"Ferrari F8 Tributo",
+			"Nissan Altima",
+			"Porsche 911",
+			"Range Rover Evoque",
+			"Subaru Impreza",
+			"Ferrari SF90 Stradale",
+			"Tesla Model S",
+			"Toyota Corolla",
+			"Volkswagen Golf",
+			"Acura NSX",
+			"Bentley Continental",
+			"Cadillac Escalade",
+			"Ferrari 488 GTB",
+			"Dodge Challenger",
+			"Ferrari 458",
+			"GMC Sierra",
+			"Hyundai Elantra",
+			"Jeep Grand Cherokee",
+			"Ferrari SF90 Stradale",
+			"Koenigsegg Agera",
+			"Lexus LS",
+			"Maserati GranTurismo",
+			"Nissan GT-R",
+			"Pagani Huayra",
+			"Rolls-Royce Ghost",
+			"Smart ForTwo",
+			"Tesla Model X",
+			"Toyota Prius",
+			"Volkswagen Jetta",
+			"Alfa Romeo Giulia",
+			"Bugatti Chiron",
+			"Chevrolet Corvette",
+			"Ferrari Portofino",
+			"Fiat 500",
+			"GMC Yukon",
+			"Honda Accord",
+			"Jaguar XJ",
+			"Kia Soul",
+			"Lamborghini Aventador",
+			"Mercedes-Benz E-Class",
+			"Nissan Maxima",
+			"Porsche Panamera",
+			"Range Rover Sport",
+			"Subaru Legacy",
+			"Tesla Model 3",
+			"Toyota Camry",
+			"Volkswagen Passat"
+		];
+
+		cars.sort();
+
+		let list = document.getElementById("myList");
+
+		cars.forEach((car)=>{
+			let ul = document.createElement("ul");
+			ul.innerText = car;
+			if (car.includes("Ferrari")) {
+				ul.classList.add("red");
+			}
+			list.appendChild(ul);
+		})
+	</script>
+</body>
+</html>
+
+
+
+<!-- for (let i = 0; i < list.length; i++) {
+    if (cars[i].textContent == 'Ferrari') {
+        cars[i].style.color = 'red';
+        }
+    } -->
