@@ -101,6 +101,3 @@ def main():
             doorloopSalon = False
 
     functionBonnetje(totaalHoorntjes, totaalBakjes, totaalAantalBolletjes, smakenTellen)
-
-
-main()
