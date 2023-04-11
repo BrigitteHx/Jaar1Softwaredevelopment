@@ -33,22 +33,6 @@ def hoorntjeOfBakje(aantalBolletjes):
             else:
                 print("Dat ken ik niet.")
 
-def toppingKiezen(keuzeHoorntjeBakje):
-    if keuzeHoorntjeBakje == "hoorntje":
-        toppingList = ["Geen", "Slagroom"]
-    elif keuzeHoorntjeBakje == "bakje":
-        toppingList = ["Geen", "Sprinkels", "Caramel Saus"]
-    else:
-        return []
-
-    while True:
-        print(f"Beschikbare toppings voor {keuzeHoorntjeBakje}: {', '.join(toppingList)}")
-        topping = input("Welke topping zou u graag willen? ")
-        if topping.lower() in [t.lower() for t in toppingList]:
-            return topping
-        else:
-            print("Dat ken ik niet.")
-
 def smakenKiezen(aantalBolletjes):
     smaken = 0
     smakenTellen = {}
@@ -65,6 +49,27 @@ def smakenKiezen(aantalBolletjes):
             print("Dat ken ik niet")
     return smakenTellen
 
+def toppingsKeuze():
+    while True:
+        toppingKeuze = input("Wat voor topping wilt u:\nA) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus? ")
+        if toppingKeuze.upper() in ("A", "B", "C", "D"):
+            return toppingKeuze.upper()
+        else:
+            print("Sorry dat snap ik niet...")
+
+def berekenToppingsPrijs(toppingKeuze, keuzeHoorntjeBakje, aantalBolletjes):
+    toppingPrijs = 0
+    if toppingKeuze == "B":
+        toppingPrijs += 0.50
+    elif toppingKeuze == "C":
+        toppingPrijs += 0.30 * aantalBolletjes
+    elif toppingKeuze == "D":
+        if keuzeHoorntjeBakje == "hoorntje":
+            toppingPrijs += 0.60
+        elif keuzeHoorntjeBakje == "bakje":
+            toppingPrijs += 0.90
+    return toppingPrijs
+
 def meerBestellen():
     while True:
         meerBestellenInput = input("Wilt u nog meer bestellen? ")
@@ -76,23 +81,40 @@ def meerBestellen():
         else:
             print("Dat ken ik niet.")
 
-def functionBonnetje(totaalHoorntjes, totaalBakjes, totaalAantalBolletjes, smakenTellen):
+def functionBonnetje(totaalHoorntjes, totaalBakjes, totaalAantalBolletjes, smakenTellen, toppingKeuze, keuzeHoorntjeBakje):
     totalH = totaalHoorntjes * 1.25
     totalBa = totaalBakjes * 0.75
     totalBo = totaalAantalBolletjes * 1.10
-
-    totaalAlles = totalH + totalBa + totalBo
+    toppingPrijs = berekenToppingsPrijs(toppingKeuze, keuzeHoorntjeBakje, totaalAantalBolletjes)
+    totaalAlles = totalH + totalBa + totalBo + toppingPrijs
     print("----------[Papi Gelato]----------\n")
     print(f"Hoorntjes:  {totaalHoorntjes} voor {round(totalH, 2)}")
     print(f"Bakjes:     {totaalBakjes} voor {round(totalBa, 2)}")
     print(f"Bolletjes:  {totaalAantalBolletjes} voor {round(totalBo, 2)}")
+    if toppingKeuze != "A":
+        print(f"Topping:    {toppingKeuze} voor {round(toppingPrijs, 2)}")
     print("Kosten per smaak:")
     for smaak in smakenTellen:
-        count = smakenTellen[smaak]
-        smaak_kosten = count * 0.50
-        print(f"{smaak}: {count} voor {round(smaak_kosten, 2)}")
-    print("--------------------------- +")
-    print(f"Totaal:      {round(totaalAlles, 2)}")
+        print(f"{smakenTellen[smaak]}x {smaak}: €{round(smakenTellen[smaak] * 0.50, 2)}")
+    print(f"\nTotaal: €{round(totaalAlles, 2)}")
+
+# def functionBonnetje(totaalHoorntjes, totaalBakjes, totaalAantalBolletjes, smakenTellen):
+#     totalH = totaalHoorntjes * 1.25
+#     totalBa = totaalBakjes * 0.75
+#     totalBo = totaalAantalBolletjes * 1.10
+
+#     totaalAlles = totalH + totalBa + totalBo
+#     print("----------[Papi Gelato]----------\n")
+#     print(f"Hoorntjes:  {totaalHoorntjes} voor {round(totalH, 2)}")
+#     print(f"Bakjes:     {totaalBakjes} voor {round(totalBa, 2)}")
+#     print(f"Bolletjes:  {totaalAantalBolletjes} voor {round(totalBo, 2)}")
+#     print("Kosten per smaak:")
+#     for smaak in smakenTellen:
+#         count = smakenTellen[smaak]
+#         smaak_kosten = count * 0.50
+#         print(f"{smaak}: {count} voor {round(smaak_kosten, 2)}")
+#     print("--------------------------- +")
+#     print(f"Totaal:      {round(totaalAlles, 2)}")
 
 def main():
     global smaak_count # zodat dictionary onthoud 
@@ -106,6 +128,7 @@ def main():
         aantalBolletjes = hoeveelBolletjes()
         keuzeHoorntjeBakje = hoorntjeOfBakje(aantalBolletjes)
         smakenTellen = smakenKiezen(aantalBolletjes)
+        toppingKeuze = toppingsKeuze()
         totaalAantalBolletjes += aantalBolletjes
         if keuzeHoorntjeBakje == "hoorntje":
             totaalHoorntjes += 1
@@ -115,4 +138,4 @@ def main():
         if not meerBestellen():
             doorloopSalon = False
 
-    functionBonnetje(totaalHoorntjes, totaalBakjes, totaalAantalBolletjes, smakenTellen)
+    functionBonnetje(totaalHoorntjes, totaalBakjes, totaalAantalBolletjes, smakenTellen, toppingKeuze, keuzeHoorntjeBakje)
