@@ -3,7 +3,7 @@
 # VARIABLES -------------------------------------------------------------------------------------------------------------
 
 MAX_BOLLETJES = 9
-smaak_count = {'aardbei': 0, 'chocolade': 0, 'vanille': 0}
+# smaak_count = {'aardbei': 0, 'chocolade': 0, 'vanille': 0}
 
 
 # FUNCTIONS -------------------------------------------------------------------------------------------------------------
@@ -33,9 +33,8 @@ def hoorntjeOfBakje(aantalBolletjes):
             else:
                 print("Dat ken ik niet.")
 
-def smakenKiezen(aantalBolletjes):
+def smakenKiezen(aantalBolletjes, smakenTellen):
     smaken = 0
-    smakenTellen = {}
     while smaken < aantalBolletjes:  
         gekozenSmaak = input( f"Welke smaak wilt u voor bolletje {smaken+1}?\nA) Aardbei, C) Chocolade of V) Vanille? ")
         if gekozenSmaak.lower() in ("aardbei","chocolade","vanille"):
@@ -44,7 +43,7 @@ def smakenKiezen(aantalBolletjes):
                 smakenTellen[gekozenSmaak.lower()] = 1
             else:
                 smakenTellen[gekozenSmaak.lower()] += 1
-            smaak_count[gekozenSmaak.lower()] += 1
+            # smaak_count[gekozenSmaak.lower()] += 1
         else:
             print("Dat ken ik niet")
     return smakenTellen
@@ -117,7 +116,7 @@ def functionBonnetje(totaalHoorntjes, totaalBakjes, totaalAantalBolletjes, smake
 #     print(f"Totaal:      {round(totaalAlles, 2)}")
 
 def main():
-    global smaak_count # zodat dictionary onthoud 
+    # global smaak_count # zodat dictionary onthoud 
     doorloopSalon = True
     totaalAantalBolletjes = 0
     totaalHoorntjes = 0
@@ -127,7 +126,7 @@ def main():
     while doorloopSalon:
         aantalBolletjes = hoeveelBolletjes()
         keuzeHoorntjeBakje = hoorntjeOfBakje(aantalBolletjes)
-        smakenTellen = smakenKiezen(aantalBolletjes)
+        smakenTellen = smakenKiezen(aantalBolletjes, smakenTellen)
         toppingKeuze = toppingsKeuze()
         totaalAantalBolletjes += aantalBolletjes
         if keuzeHoorntjeBakje == "hoorntje":
