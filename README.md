@@ -1,5 +1,20 @@
 # Jaar1Softwaredevelopment
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+planning 13-4-2023:
+
+ - leren programmeren:
+   + Proef A - Een DRY ijssalon update na CJV
+
+- dynamische userinterface:
+  + M02.O1 - Buttons 1.0
+
+- Stage plek voorbeidingen
+- Engels book review afronden
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 planning week 3-4-2023 - 7-4-2023:
 - leren programmeren:
   + Proef A - Een DRY ijssalon complete 
