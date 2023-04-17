@@ -15,7 +15,7 @@ def hoeveelBolletjes():
             print("Dat ken ik niet.")
         else:
             aantalBolletjes = int(aantalBolletjesInput)
-            if aantalBolletjes >= MAX_BOLLETJES:
+            if aantalBolletjes >= 9:
                 print("Zulke grote porties verkopen wij niet.")
             else:
                 return aantalBolletjes
