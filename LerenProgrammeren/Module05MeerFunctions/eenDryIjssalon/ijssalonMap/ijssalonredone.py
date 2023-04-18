@@ -82,5 +82,52 @@ def meerBestellen():
             print("Dat ken ik niet")
     return doorgaan
 
-def functionBonnetje():
+def functionBonnetje(prijsTopping, smakenLijst, topping):
+    totaalPrijsAlles = 0
+    bonnetjeAlles = []
+    lijstTotaal = []
+
+    totaalAantalProducten = [
+             { 'naam' : 'aardbei',    'hoeveel' : 0,   'prijs' : 1.10},
+             { 'naam' : 'chocolade',  'hoeveel' : 0,   'prijs' : 1.10},
+             { 'naam' : 'vanille',    'hoeveel' : 0,   'prijs' : 1.10},
+             { 'naam' : 'bakje',      'hoeveel' : 0,   'prijs' : 0.75},
+             { 'naam' : 'hoorntje',   'hoeveel' : 0,   'prijs' : 1.25}
+             ] 
     
+    for product in totaalAantalProducten:
+        for smaak in smakenLijst:
+            if smaak == product['naam']:
+                product['hoeveel'] += 1
+
+        if product['hoeveel'] > 0:
+            lijstTotaal.append(product)
+
+# -------------------------------------------------
+    
+        productEenPrijs = product['prijs']  
+        prijsProduct = product['hoeveel'] * productEenPrijs
+        totaalPrijsAlles += prijsProduct 
+
+        bonnetjeAlles.append(f"{product['naam']}            {product['hoeveel']} voor:      {productEenPrijs} = {prijsProduct}")
+    
+# -------------------------------------------------
+
+        if prijsTopping > 0:
+            bonnetjeAlles.append(f"{topping}            voor: {round(prijsTopping), 2}")
+        
+        totaalPrijsAlles += prijsTopping
+        bonnetjeAlles.append(f"Totaal:                  {round(totaalPrijsAlles), 2}")
+    
+    return bonnetjeAlles
+
+
+def bestellen(aantalBolletjes, smakenLijst):
+    bestellen = True
+
+    while bestellen:
+        hoeveel =  hoeveelBolletjes()
+        bakjeHoorntje = hoorntjeOfBakje(aantalBolletjes)
+        smakenLijst
+
+        smakenkeuze = smakenKiezen(aantalBolletjes)
