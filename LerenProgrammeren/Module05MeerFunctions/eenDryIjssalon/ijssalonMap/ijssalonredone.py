@@ -1,4 +1,4 @@
-# ijssalon re-done
+ijssalon re-done
 
 def hoeveelBolletjes(): 
     vragenHoeveel = True
@@ -34,7 +34,7 @@ def smakenKiezen(aantalBolletjes):
     smakenLijst = []
     aantal = 0 
     while keuzeSmaak:
-        smaak = input( f"Welke smaak wilt u voor {aantalBolletjes} {aantal+1}?\nA) Aardbei, C) Chocolade of V) Vanille? ")
+        smaak = input( f"Welke smaak wilt u voor bolletje {aantal+1}?\nA) Aardbei, C) Chocolade of V) Vanille? ")
         if smaak.lower() in ("aardbei","chocolade","vanille"):
             aantal += 1
             smakenLijst.append(smaak.lower()) 
@@ -73,11 +73,9 @@ def meerBestellen():
     while volgendeBestelling:
         meerBestellenInput = input("Wilt u nog meer bestellen? ")
         if meerBestellenInput.lower == "ja":
-            doorgaan = "waar"
-            volgendeBestelling = False
+            doorgaan = True
         elif meerBestellenInput.lower == "nee":
-            doorgaan = "stop"
-            volgendeBestelling = False
+            doorgaan = False
         else: 
             print("Dat ken ik niet")
     return doorgaan
@@ -89,7 +87,7 @@ def functionBonnetje(prijsTopping, smakenLijst, topping):
 
     totaalAantalProducten = [
              { 'naam' : 'aardbei',    'hoeveel' : 0,   'prijs' : 1.10},
-             { 'naam' : 'chocolade',  'hoeveel' : 0,   'prijs' : 1.10},
+             { 'naam' : 'chocolade',  'hoeveel' : 0,   'prijs' : 1.10}, 
              { 'naam' : 'vanille',    'hoeveel' : 0,   'prijs' : 1.10},
              { 'naam' : 'bakje',      'hoeveel' : 0,   'prijs' : 0.75},
              { 'naam' : 'hoorntje',   'hoeveel' : 0,   'prijs' : 1.25}
@@ -121,13 +119,16 @@ def functionBonnetje(prijsTopping, smakenLijst, topping):
     
     return bonnetjeAlles
 
+def main():
+    again = True
+    while again:
+        aantal_bolletjes = hoeveelBolletjes()
+        keuze_hoorntje_bakje = hoorntjeOfBakje(aantal_bolletjes)
+        smaken_lijst = smakenKiezen(aantal_bolletjes)
+        topping = toppingsKeuze()
+        prijs_topping = berekenToppingsPrijs(topping, aantal_bolletjes, keuze_hoorntje_bakje)
+        functionBonnetje(prijs_topping, smaken_lijst, topping)
+        again = meerBestellen()
 
-def bestellen(aantalBolletjes, smakenLijst):
-    bestellen = True
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    while bestellen:
-        hoeveel =  hoeveelBolletjes()
-        bakjeHoorntje = hoorntjeOfBakje(aantalBolletjes)
-        smakenLijst
-
-        smakenkeuze = smakenKiezen(aantalBolletjes)

@@ -115,26 +115,26 @@ def functionBonnetje(totaalHoorntjes, totaalBakjes, totaalAantalBolletjes, smake
 #     print("--------------------------- +")
 #     print(f"Totaal:      {round(totaalAlles, 2)}")
 
-def main():
-    # global smaak_count # zodat dictionary onthoud 
-    doorloopSalon = True
-    totaalAantalBolletjes = 0
-    totaalHoorntjes = 0
-    totaalBakjes = 0
-    smakenTellen = {}
+# def main():
+#     # global smaak_count # zodat dictionary onthoud 
+#     doorloopSalon = True
+#     totaalAantalBolletjes = 0
+#     totaalHoorntjes = 0
+#     totaalBakjes = 0
+#     smakenTellen = {}
 
-    while doorloopSalon:
-        aantalBolletjes = hoeveelBolletjes()
-        keuzeHoorntjeBakje = hoorntjeOfBakje(aantalBolletjes)
-        smakenTellen = smakenKiezen(aantalBolletjes, smakenTellen)
-        toppingKeuze = toppingsKeuze()
-        totaalAantalBolletjes += aantalBolletjes
-        if keuzeHoorntjeBakje == "hoorntje":
-            totaalHoorntjes += 1
-        else:
-            totaalBakjes += 1
+#     while doorloopSalon:
+#         aantalBolletjes = hoeveelBolletjes()
+#         keuzeHoorntjeBakje = hoorntjeOfBakje(aantalBolletjes)
+#         smakenTellen = smakenKiezen(aantalBolletjes, smakenTellen)
+#         toppingKeuze = toppingsKeuze()
+#         totaalAantalBolletjes += aantalBolletjes
+#         if keuzeHoorntjeBakje == "hoorntje":
+#             totaalHoorntjes += 1
+#         else:
+#             totaalBakjes += 1
 
-        if not meerBestellen():
-            doorloopSalon = False
+#         if not meerBestellen():
+#             doorloopSalon = False
 
-    functionBonnetje(totaalHoorntjes, totaalBakjes, totaalAantalBolletjes, smakenTellen, toppingKeuze, keuzeHoorntjeBakje)
+#     functionBonnetje(totaalHoorntjes, totaalBakjes, totaalAantalBolletjes, smakenTellen, toppingKeuze, keuzeHoorntjeBakje)
