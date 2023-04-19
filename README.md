@@ -1,5 +1,10 @@
 # Jaar1Softwaredevelopment
 
+planning 19 - 4 2023:
+
+ - leren programmeren:
+   + Dry ijssalon update afmaken 
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 planning 13-4-2023:
