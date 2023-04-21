@@ -43,7 +43,16 @@ def getNumberOfCharacters(text: str) -> int:
 
 # opdracht 2
 def getNumberOfSentences(text: str) -> int:
-    return 0
+    lijstCharacters = [".", "!", "?"]
+    # want na deze characters eindigt de zin, elke keer als deze worden gebruikt = 1 zin 
+    aantalZinnen = 0
+
+    for character in text:
+        if character in lijstCharacters:
+            aantalZinnen += 1
+
+    return aantalZinnen
+
 
 # opdracht 3
 def getNumberOfWords(text: str) -> int:
