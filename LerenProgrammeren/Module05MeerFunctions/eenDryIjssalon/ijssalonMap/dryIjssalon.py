@@ -4,4 +4,4 @@ from ijssalonredone import *
 
 print("Welkom bij Papi Gelato\n")
 
-
+main()

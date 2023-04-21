@@ -1,4 +1,4 @@
-ijssalon re-done
+# ijssalon re-done
 
 def hoeveelBolletjes(): 
     vragenHoeveel = True
@@ -74,16 +74,19 @@ def meerBestellen():
         meerBestellenInput = input("Wilt u nog meer bestellen? ")
         if meerBestellenInput.lower == "ja":
             doorgaan = True
+            volgendeBestelling = False
         elif meerBestellenInput.lower == "nee":
             doorgaan = False
+            volgendeBestelling = False
         else: 
             print("Dat ken ik niet")
     return doorgaan
-
+ 
 def functionBonnetje(prijsTopping, smakenLijst, topping):
     totaalPrijsAlles = 0
     bonnetjeAlles = []
     lijstTotaal = []
+    space = "                                        "
 
     totaalAantalProducten = [
              { 'naam' : 'aardbei',    'hoeveel' : 0,   'prijs' : 1.10},
@@ -107,28 +110,32 @@ def functionBonnetje(prijsTopping, smakenLijst, topping):
         prijsProduct = product['hoeveel'] * productEenPrijs
         totaalPrijsAlles += prijsProduct 
 
-        bonnetjeAlles.append(f"{product['naam']}            {product['hoeveel']} voor:      {productEenPrijs} = {prijsProduct}")
+        bonnetjeAlles.append(f"{product['naam']} {product['hoeveel']} voor:{space}{prijsProduct}\n")
     
 # -------------------------------------------------
 
         if prijsTopping > 0:
-            bonnetjeAlles.append(f"{topping}            voor: {round(prijsTopping), 2}")
+            bonnetjeAlles.append(f"{topping}voor:{space}{round(prijsTopping), 2}\n")
         
         totaalPrijsAlles += prijsTopping
-        bonnetjeAlles.append(f"Totaal:                  {round(totaalPrijsAlles), 2}")
+        bonnetjeAlles.append(f"Totaal:{space}{round(totaalPrijsAlles), 2}\n")
     
     return bonnetjeAlles
+
+
 
 def main():
     again = True
     while again:
         aantal_bolletjes = hoeveelBolletjes()
         keuze_hoorntje_bakje = hoorntjeOfBakje(aantal_bolletjes)
-        smaken_lijst = smakenKiezen(aantal_bolletjes)
+        smaken_lijst = smakenKiezen(aantal_bolletjes) 
         topping = toppingsKeuze()
         prijs_topping = berekenToppingsPrijs(topping, aantal_bolletjes, keuze_hoorntje_bakje)
-        functionBonnetje(prijs_topping, smaken_lijst, topping)
-        again = meerBestellen()
+        bonnetjeAlles = functionBonnetje(prijs_topping, smaken_lijst, topping)
+        doorgaan = meerBestellen()
+        if doorgaan == False: 
+            print(bonnetjeAlles)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
