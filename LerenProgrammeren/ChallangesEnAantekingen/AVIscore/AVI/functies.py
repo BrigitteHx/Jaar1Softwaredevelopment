@@ -56,4 +56,27 @@ def getNumberOfSentences(text: str) -> int:
 
 # opdracht 3
 def getNumberOfWords(text: str) -> int:
-    return 0
+    return len(text.split())
+# Splits text strings by using column and row delimiters. 
+
+# opdracht 5
+def getAVIScore(text: str) -> int:
+    woord = getNumberOfWords(text)
+    zin = getNumberOfSentences(text)
+
+    avi = zin / woord
+
+    if avi <= 7:
+        aviScore = 5
+    elif avi > 7 and avi <= 8:
+        aviScore = 6
+    elif avi > 8 and avi <= 9:
+        aviScore = 7
+    elif avi > 9 and avi <= 10:
+        aviScore = 8
+    elif avi > 10 and avi <= 11:
+        aviScore = 11
+    elif avi > 11:
+        aviScore = 12
+    
+    return aviScore
