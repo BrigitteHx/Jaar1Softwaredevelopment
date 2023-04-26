@@ -2,6 +2,13 @@
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
+planning 26 - 4 2023:
+
+ - CV afmaken
+ - planning rest vakantie maken (rekentoets, rekenen, engels voorbereiding, softskills, ijssalon re-work, leerpaden progress) 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 planning 21 - 4 2023:
 
  - leren programmeren:
