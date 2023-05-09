@@ -5,7 +5,7 @@ smakenLijst = []
 
 # ----------------------------------------------------------------------------------------------
     
-print(begin())
+print("Welkom bij Papi Gelato!\n")
 
 bestellenIjs = True
 

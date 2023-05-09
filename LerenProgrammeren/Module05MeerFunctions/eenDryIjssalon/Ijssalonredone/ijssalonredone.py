@@ -1,10 +1,4 @@
-
-
-
-def begin():
-    welkom = "Welkom bij Papi Gelato!\n"
-    return welkom
-
+# ijssalon re-done 
 
 def hoeveelheidBolletjes():
     hoeveelheidVraag = True
