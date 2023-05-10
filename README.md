@@ -4,8 +4,16 @@
 
 planning 9 - 5 2023:
 
- - begin restart Dry Ijssalon
- - planning overige leerpaden opzetten
+ - CJV 22
+ - website CV online zetten [done]
+ - M02.O1 - Buttons 1.0
+ 
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+planning 9 - 5 2023:
+
+ - begin restart Dry Ijssalon [done]
+ - planning overige leerpaden opzetten [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
