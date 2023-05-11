@@ -1,0 +1,42 @@
+#container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    padding: 40px;
+    margin: 40px;
+    background: url("bg0.jpg") no-repeat center/cover;
+} 
+  
+#imageBelow {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 10px;
+    right: 10px;
+    background: url("0.jpg") no-repeat center/cover;
+}
+  
+#container.clickOne {
+    background-image: url("bg1.jpg");
+}
+  
+.imageBelow1 {
+    background-image: url("1.jpg");
+}
+  
+#container.clickTwo {
+    background-image: url("bg2.jpg");
+}
+  
+.imageBelow2 {
+    background-image: url("2.jpg");
+}
+  
+#container.clickThree {
+    background-image: url("bg3.jpg");
+}
+  
+.imageBelow3 {
+    background-image: url("3.jpg");
+}
+  
