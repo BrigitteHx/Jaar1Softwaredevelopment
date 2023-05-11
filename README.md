@@ -6,7 +6,7 @@ planning 11 - 5 2023:
 
  - e-mail Stage versturen [done]
  - M02.O1 - Buttons 1.0 afmaken [done]
- - Back End 1 afmaken
+ - Back End 1 afmaken [done]
  
 tijd over:
 
