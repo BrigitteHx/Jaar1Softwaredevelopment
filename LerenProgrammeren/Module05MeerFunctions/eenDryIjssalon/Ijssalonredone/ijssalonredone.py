@@ -7,11 +7,26 @@ def hoeveelheidBolletjes():
             hoeveelBolletjes = int(input("Hoeveel bolletjes wilt u? "))
             if hoeveelBolletjes > 8:
                 print("Sorry, zulke grote porties hebben we niet")
-            elif hoeveelBolletjes <= 8:
-                 hoeveelheidVraag = False
+            elif 0 < hoeveelBolletjes <= 8:
+                hoeveelheidVraag = False
+            else: 
+                print("Sorry, geen goed aantal!")
         except ValueError:
             print("Sorry, dat ken ik niet!")
     return hoeveelBolletjes
+
+# def hoeveelBolletjes(): 
+#     vragenHoeveel = True
+#     while vragenHoeveel: 
+#         aantalBolletjesInput = input("Hoeveel bolletjes zou u graag willen? ")
+#         if not aantalBolletjesInput.isdigit():
+#             print("Dat ken ik niet.")
+#         else:
+#             aantalBolletjes = int(aantalBolletjesInput)
+#             if aantalBolletjes >= 9:
+#                 print("Zulke grote porties verkopen wij niet.")
+#             else:
+#                 return aantalBolletjes
 
 def keuzeSmaak(hoeveelBolletjes):
     kiezen  = True
@@ -72,7 +87,7 @@ def toppingKeuze(topping, hoeveelBolletjes, keuzeHB):
             prijsTopping = 0.60
     return round(prijsTopping,2)
 
-def bestelling():
+def bestelling(): # loop toevoegen 
     meerBestellen = input("Wilt u nog meer bestellen? ")
     return meerBestellen 
 
@@ -113,6 +128,6 @@ def bonnetje(smakenLijst, prijsTopping):
         bonnetje.append(f'topping : € {round(prijsTopping ,2)}')
     
     totaalPrijs += prijsTopping
-    bonnetje.append(f"Totaal € {round(totaalPrijs,2)}")
+    bonnetje.append(f"Totaal € {round(totaalPrijs,2):.2f}")
     
     return bonnetje

@@ -26,3 +26,5 @@ bonnetje = bonnetje(smakenLijst,prijsTopping)
 print("--------------['Papi Gelato']--------------")
 for optie in bonnetje:
     print(optie)
+
+# naam function ww_object

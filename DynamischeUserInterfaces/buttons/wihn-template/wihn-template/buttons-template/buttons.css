@@ -1,0 +1,27 @@
+
+.box{
+    width: 650px;
+    border: 650px;
+    height: 3px;
+    color: grey;
+}
+
+#button *{
+    padding: 10px 50px 10px 50px;
+    margin: 10px 3px 10px 10px;
+    color: white;
+    background-color: green;
+}
+
+#imageOne{
+    height: 450px;
+    margin-left: 50px;
+}
+
+#imageTwo{
+    margin-left: 500;
+}
+
+#buttonOne:disabled, #buttonTwo:disabled, #buttonThree:disabled{
+    background-color: red;
+}
