@@ -74,13 +74,13 @@ body.night {
             $greet = 'Goedemorgen! <br> Het is nu: '.$currentTime;
 
         }else if($currentTime >= '12:00' && $currentTime < '18:00'){
-            $greet = 'Goodmiddag! <br> Het is nu: '.$currentTime;
+            $greet = 'Goedemiddag! <br> Het is nu: '.$currentTime;
 
         }else if($currentTime >= '18:00' && $currentTime < '00:00'){
-            $greet = 'Goodenavond! <br> Het is nu: '.$currentTime;
+            $greet = 'Goedenavond! <br> Het is nu: '.$currentTime;
 
         }else if($currentTime >= '00:00' && $currentTime < '06:00'){
-            $greet = 'Goodenacht! <br> Het is nu: '. $currentTime;
+            $greet = 'Goedenacht! <br> Het is nu: '. $currentTime;
         }
 
     return $greet;
@@ -119,9 +119,6 @@ body.night {
             }
             .containter {
                 position: absolute;
-                /* top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%); */
                 color: white;  
             }
         </style>
@@ -129,7 +126,9 @@ body.night {
 
     <body>
         <div class="containter">
+
             <h1> <?php echo greeting();?> </h1>
+            
         </div>
     </body>
     
