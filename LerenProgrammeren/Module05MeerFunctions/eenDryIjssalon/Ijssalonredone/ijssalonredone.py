@@ -53,7 +53,7 @@ def keuzeSmaak(hoeveelIjs, soortKlant):
         soort = "liter"
     
     while kiezen:
-        smaak = input( f"Welke smaak wilt u voor {soort} {teller+1}?\n A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
+        smaak = input( f"Welke smaak wilt u voor {soort} {teller+1}?\n A) Aardbei, C) Chocolade of V) Vanille? ")
         if smaak.lower() in ("aardbei","chocolade","vanille", "munt"):
             teller += 1
             smakenLijst.append(smaak.lower()) 
@@ -135,7 +135,7 @@ def bonnetje(smakenLijst, prijsTopping, soortKlant):
              { 'naam' : 'aardbei', 'hoeveel' : 0, 'prijs' : 1.10},
              { 'naam' : 'chocolade', 'hoeveel' : 0, 'prijs' : 1.10},
              { 'naam' : 'vanille', 'hoeveel' : 0, 'prijs' : 1.10},
-             { 'naam' : 'munt', 'hoeveel' : 0, 'prijs' : 1.10},
+            #  { 'naam' : 'munt', 'hoeveel' : 0, 'prijs' : 1.10},
              { 'naam' : 'hoorntje', 'hoeveel' : 0, 'prijs' : 1.25},
              { 'naam' : 'bakje', 'hoeveel' : 0, 'prijs' : 0.75}]
     
