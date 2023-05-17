@@ -132,10 +132,10 @@ def bonnetje(smakenLijst, prijsTopping, soortKlant):
     lijstVanBon = []
 
     alleOptiesDict = [
-             { 'naam' : 'aardbei', 'hoeveel' : 0, 'prijs' : 0.95},
-             { 'naam' : 'chocolade', 'hoeveel' : 0, 'prijs' : 0.95},
-             { 'naam' : 'vanille', 'hoeveel' : 0, 'prijs' : 0.95},
-             { 'naam' : 'hoorntje', 'hoeveel' : 0, 'prijs' : 1.25 },
+             { 'naam' : 'aardbei', 'hoeveel' : 0, 'prijs' : 1.10},
+             { 'naam' : 'chocolade', 'hoeveel' : 0, 'prijs' : 1.10},
+             { 'naam' : 'vanille', 'hoeveel' : 0, 'prijs' : 1.10},
+             { 'naam' : 'hoorntje', 'hoeveel' : 0, 'prijs' : 1.25},
              { 'naam' : 'bakje', 'hoeveel' : 0, 'prijs' : 0.75}]
     
     
