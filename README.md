@@ -4,7 +4,7 @@
 
 planning 17 - 5 2023:
 
-- ijssalon 
+- ijssalon [done]
 - stage voorbereiding [done]
 - rekenlessen door 
 
