@@ -112,17 +112,17 @@ def toppingKeuze(topping, hoeveelIjs, keuzeHB):
             prijsTopping = 0.60
     return round(prijsTopping,2)
 
-def bestelling(klantSoort): # loop toevoegen 
-    if klantSoort == "1":
-        meerBestellen = input("Wilt u nog meer bestellen? ")
-    elif klantSoort == "2":
-        meerBestellen = "nee"
-    return meerBestellen 
+def bestelling(klantSoort):
+    vragenMeerBestellen = True
+    while vragenMeerBestellen:
+        if klantSoort == "1":
+            meerBestellen = input("Wilt u nog meer bestellen? ")
+        elif klantSoort == "2":
+            meerBestellen = "nee"
 
-# def bestelling(klantSoort): # loop toevoegen 
-#     if klantSoort == "1" or klantSoort == "2":
-#         meerBestellen = input("Wilt u nog meer bestellen? ")
-#     return meerBestellen 
+        if meerBestellen in ("ja", "nee"):
+            return meerBestellen
+        vragenMeerBestellen = False
 
 def bonnetje(smakenLijst, prijsTopping, soortKlant):
     totaalPrijs = 0
