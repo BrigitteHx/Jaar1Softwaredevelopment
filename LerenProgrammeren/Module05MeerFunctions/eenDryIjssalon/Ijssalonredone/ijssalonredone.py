@@ -170,7 +170,7 @@ def bonnetje(smakenLijst, prijsTopping, soortKlant):
         bonnetje.append(f'topping : € {round(prijsTopping ,2)}')
 
     if soortKlant == 2:
-        bonnetje.append(F"BTW 9%) : € {round((prijsTopping) / 100 * 9) ,2}")
+        bonnetje.append(F"BTW 6%) : € {round((prijsTopping) / 100 * 6) ,2}")
     
     totaalPrijs += prijsTopping
     bonnetje.append(f"Totaal € {round(totaalPrijs,2):.2f}")
