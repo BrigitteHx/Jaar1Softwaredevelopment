@@ -1,4 +1,6 @@
 # ijssalon re-done 
+sorryError = "Sorry dat is geen optie die we aanbieden..."
+
 def particulierOfZakelijk():
     keuzeKlant = True
     while keuzeKlant:
@@ -6,7 +8,7 @@ def particulierOfZakelijk():
         if soortKlant.lower() in ("1", "2"):
             keuzeKlant = False
         else:
-            print("Sorry, dat ken ik niet!")
+            print(sorryError)
     return soortKlant
 
 def hoeveelheidBolletjes(soortKlant):
@@ -16,15 +18,15 @@ def hoeveelheidBolletjes(soortKlant):
             if soortKlant == "1":
                 hoeveelIjs = int(input("Hoeveel bolletjes wilt u? "))
                 if hoeveelIjs > 8:
-                    print("Sorry, zulke grote porties hebben we niet")
+                    print(sorryError)
                 elif 0 < hoeveelIjs <= 8:
                     hoeveelheidVraag = False
                 else: 
-                    print("Sorry, geen goed aantal!")
+                    print(sorryError)
             elif soortKlant == "2":
                 hoeveelIjs = int(input("Hoeveel liter wilt u? "))
         except ValueError:
-                print("Sorry, dat ken ik niet!")
+                print(sorryError)
         return hoeveelIjs
 
 # def hoeveelBolletjes(): 
@@ -56,7 +58,7 @@ def keuzeSmaak(hoeveelIjs, soortKlant):
             teller += 1
             smakenLijst.append(smaak.lower()) 
         else:
-            print("Sorry, dat ken ik niet!")
+            print(sorryError)
         if teller == hoeveelIjs:
             kiezen = False
     return smakenLijst
@@ -73,7 +75,7 @@ def hoorntjeBakje(hoeveelIjs, soortKlant):
                     print(f"Dan krijgt u van mij een {keuzeHB} met {hoeveelIjs} bolletjes\n")
                     kiezen = False
                 else:
-                        print("Sorry, dat ken ik niet!")
+                        print(sorryError)
             elif hoeveelIjs >= 4 and hoeveelIjs <= 8:
                 print(f"Dan krijgt u van mij een bakje met {hoeveelIjs} bolletjes\n")
                 keuzeHB = "bakje"
@@ -92,7 +94,7 @@ def keuzeTopping(klantSoort):
                 if topping.lower() in ("a","b","c","d"):
                     toppingKiezen = False
                 else:
-                    print("Dat ken ik niet, sorry!")
+                    print(sorryError)
             elif klantSoort == "2":
                 topping = "a"
                 toppingKiezen = False
