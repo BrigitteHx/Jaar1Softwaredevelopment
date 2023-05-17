@@ -2,11 +2,19 @@
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
+planning 17 - 5 2023:
+
+- ijssalon 
+- stage voorbereiding [done]
+- rekenlessen door 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 planning 12 - 5 2023:
 
-- begin verdere opdracht ijssalon 
-- player menu dev skills van game digitaliseren
-- stage voorbereiding 
+- begin verdere opdracht ijssalon [done]
+- player menu dev skills van game digitaliseren [started]
+- stage voorbereiding [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
