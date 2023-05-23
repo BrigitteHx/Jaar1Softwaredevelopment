@@ -7,6 +7,10 @@ planning 23 - 5 2023:
 - CJV 23 [done]
 - keuze en verantwoording project python [done]
 - CJV 24
+- start python meesterproef [done - flowchart + V1]
+- rekenen alle lessen af [done] 
+
+tijd over:
 - start buttons 2.0 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
