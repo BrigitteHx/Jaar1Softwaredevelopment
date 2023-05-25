@@ -32,7 +32,7 @@ def lingo():
 
     print("Welkom bij Lingo!\n")
     print("Raad het ENGELSE 5 letterige woord voordat de pogingen op zijn.\n")
-    print("Als een geraade letter goed is én op de juiste plek zal er een X staan.\nAls de letter in het woord zit maar niet op de juiste plek zal er een O staan.")
+    print("Als een gerade letter goed is én op de juiste plek zal er een X staan.\nAls de letter in het woord zit maar niet op de juiste plek zal er een O staan.")
     print("Je kunt tot 5 keer raden. \n")
     print(chosenWord)
 
