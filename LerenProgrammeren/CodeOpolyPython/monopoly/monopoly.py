@@ -1,5 +1,6 @@
 # MONOPOLY
 
+# PLAYER PROPERTY
 class Property:
     def __init__(self, name, price, rent):
         self.name = name
@@ -53,3 +54,19 @@ board = [
 # PRINT BOARD
 for property in board:
     print(f"{property.name} - Price: ${property.price}, Rent: ${property.rent}")
+
+
+# PLAYER MONEY
+class Player:
+    def __init__(self, name, money):
+        self.name = name
+        self.money = money
+        self.position = 0  # 0 = plaats Go in dict
+
+# PLAYERS
+player1 = Player("Player 1", 1500)
+player2 = Player("Player 2", 1500)
+
+# PRINT INFO 
+print(f"{player1.name} - Money: ${player1.money}, Position: {player1.position}")
+print(f"{player2.name} - Money: ${player2.money}, Position: {player2.position}")
