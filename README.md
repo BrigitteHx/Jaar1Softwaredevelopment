@@ -4,6 +4,14 @@
 
 planning 25 - 5 2023:
 
+- devskills game
+- buttons 1.0 remade
+- buttons 2.0 continue 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+planning 25 - 5 2023:
+
 - CJV 25 [done]
 - start buttons 2.0 
 - assesment af [done]
