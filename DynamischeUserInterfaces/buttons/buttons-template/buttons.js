@@ -39,4 +39,3 @@ buttonOne.onclick = clickEvent;
 buttonTwo.onclick = clickEvent;
 buttonThree.onclick = clickEvent;
 
-
