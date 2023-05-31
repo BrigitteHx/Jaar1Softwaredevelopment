@@ -10,6 +10,7 @@ class Property:
         self.name = name
         self.price = price
         self.rent = rent
+        self.owner = None 
 
 # BOARD
 board = [
@@ -65,7 +66,7 @@ class Player:
     def __init__(self, name, money):
         self.name = name
         self.money = money
-        self.position = 0  # 0 = plaats Go in dict
+        self.position = 0  # 0 = place Go in dict
 
 # PLAYERS
 player1 = Player("Player 1", 1500)
@@ -94,4 +95,27 @@ print(f"{player1.name} rolled a {dice_roll} and moved to position {player1.posit
 
 pass_go(player1)
 print(f"{player1.name} passed Go and collected $200. Money: ${player1.money}")
+
+# PROPERTY PURCHASE 
+def purchase_property(player, property):
+    if player.money >= property.price:
+        player.money -= property.price
+        property.owner = player.name  # !! owner
+        print(f"{player.name} purchased {property.name} for ${property.price}. Money: ${player.money}")
+    else:
+        print(f"{player.name} doesn't have enough money to purchase {property.name}.")
+
+# RENT PAYMENT
+def pay_rent(player, property):
+    rent = property.rent
+    if player.money >= rent:
+        player.money -= rent
+        print(f"{player.name} paid ${rent} rent to {property.owner}. Money: ${player.money}")
+    else:
+        print(f"{player.name} doesn't have enough money to pay rent to {property.owner}.")
+
+# TEST
+player1.money = 1000  # player 1 minder money voor test 
+purchase_property(player1, board[1])  # player 1 koopt Mediterranean Avenue
+pay_rent(player1, board[1])  # player 1 betaald rent voor Mediterranean Avenue
 
