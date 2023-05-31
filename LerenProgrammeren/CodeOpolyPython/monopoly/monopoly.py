@@ -1,5 +1,9 @@
 # MONOPOLY
 
+# IMPORTS
+
+import random
+
 # PLAYER PROPERTY
 class Property:
     def __init__(self, name, price, rent):
@@ -70,3 +74,24 @@ player2 = Player("Player 2", 1500)
 # PRINT INFO 
 print(f"{player1.name} - Money: ${player1.money}, Position: {player1.position}")
 print(f"{player2.name} - Money: ${player2.money}, Position: {player2.position}")
+
+# ROLLING DICE
+def roll_dice():
+    return random.randint(1, 6)
+
+# PLAYER MOVEMENT
+def move_player(player, steps):
+    player.position = (player.position + steps) % len(board)
+
+# PASSING GO = + 200 MONEY
+def pass_go(player):
+    player.money += 200
+
+# TEST ABOVE 
+dice_roll = roll_dice()
+move_player(player1, dice_roll)
+print(f"{player1.name} rolled a {dice_roll} and moved to position {player1.position}")
+
+pass_go(player1)
+print(f"{player1.name} passed Go and collected $200. Money: ${player1.money}")
+
