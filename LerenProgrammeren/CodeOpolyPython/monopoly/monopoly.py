@@ -73,8 +73,8 @@ player1 = Player("Player 1", 1500)
 player2 = Player("Player 2", 1500)
 
 # PRINT INFO 
-print(f"{player1.name} - Money: ${player1.money}, Position: {player1.position}")
-print(f"{player2.name} - Money: ${player2.money}, Position: {player2.position}")
+# print(f"{player1.name} - Money: ${player1.money}, Position: {player1.position}")
+# print(f"{player2.name} - Money: ${player2.money}, Position: {player2.position}")
 
 # ROLLING DICE
 def roll_dice():
@@ -89,12 +89,12 @@ def pass_go(player):
     player.money += 200
 
 # TEST ABOVE 
-dice_roll = roll_dice()
-move_player(player1, dice_roll)
-print(f"{player1.name} rolled a {dice_roll} and moved to position {player1.position}")
+# dice_roll = roll_dice()
+# move_player(player1, dice_roll)
+# print(f"{player1.name} rolled a {dice_roll} and moved to position {player1.position}")
 
-pass_go(player1)
-print(f"{player1.name} passed Go and collected $200. Money: ${player1.money}")
+# pass_go(player1)
+# print(f"{player1.name} passed Go and collected $200. Money: ${player1.money}")
 
 # PROPERTY PURCHASE 
 def purchase_property(player, property):
@@ -115,7 +115,112 @@ def pay_rent(player, property):
         print(f"{player.name} doesn't have enough money to pay rent to {property.owner}.")
 
 # TEST
-player1.money = 1000  # player 1 minder money voor test 
-purchase_property(player1, board[1])  # player 1 koopt Mediterranean Avenue
-pay_rent(player1, board[1])  # player 1 betaald rent voor Mediterranean Avenue
+# player1.money = 1000  # player 1 minder money voor test 
+# purchase_property(player1, board[1])  # player 1 koopt Mediterranean Avenue
+# pay_rent(player1, board[1])  # player 1 betaald rent voor Mediterranean Avenue
+
+# CHECK PLAYER WON
+def has_won(player):
+    return False
+
+# MAIN LOOP
+game_over = False
+while not game_over:
+    # player 1 
+    print(f"\n{player1.name}'s turn:")
+    dice_roll = roll_dice()
+    move_player(player1, dice_roll)
+    print(f"{player1.name} rolled a {dice_roll} and moved to position {player1.position}")
+
+    # check voorbij GO
+    if player1.position == 0:
+        pass_go(player1)
+        print(f"{player1.name} passed Go and collected $200. Money: ${player1.money}")
+
+    # property 
+    current_property = board[player1.position]
+    if current_property.price > 0:
+        if current_property.owner is None:
+            purchase_property(player1, current_property)
+        elif current_property.owner != player1:
+            pay_rent(player1, current_property)
+
+    # check winnen
+    if has_won(player1):
+        print(f"{player1.name} has won the game!")
+        game_over = True
+
+    # player 2
+    print(f"\n{player2.name}'s turn:")
+    dice_roll = roll_dice()
+    move_player(player2, dice_roll)
+    print(f"{player2.name} rolled a {dice_roll} and moved to position {player2.position}")
+
+    # check voorbij GO
+    if player2.position == 0:
+        pass_go(player2)
+        print(f"{player2.name} passed Go and collected $200. Money: ${player2.money}")
+
+    # property
+    current_property = board[player2.position]
+    if current_property.price > 0:
+        if current_property.owner is None:
+            purchase_property(player2, current_property)
+        elif current_property.owner != player2:
+            pay_rent(player2, current_property)
+
+    # check winnen
+    if has_won(player2):
+        print(f"{player2.name} has won the game!")
+        game_over = True
+
+# ----------------------------------------------------------------------------------------------------------------------------
+
+# EXTRA FUNCTIES
+
+class Card:
+    def __init__(self, text):
+        self.text = text
+
+# CHANCE + COMMUNITY CARDS
+chance_cards = [
+    Card("Advance to Go. Collect $200."),
+    Card("Bank error in your favor. Collect $75."),
+    Card("Go directly to Jail. Do not pass Go, do not collect $200."),
+]
+
+community_chest_cards = [
+    Card("Get out of Jail Free. This card may be kept until needed or sold."),
+    Card("Income tax refund. Collect $20."),
+    Card("Go back to Illinois Avenue. If you pass Go, collect $200."),
+]
+
+# DRAW CARD
+def draw_card(cards):
+    return random.choice(cards)
+
+# HANDLE CARD EFFECT 
+def handle_chance_card(player, card):
+    # nog niet klaar
+    pass
+
+# HANDLE CARD EFFECT 
+def handle_community_chest_card(player, card):
+    # nog niet klaar
+    pass
+
+# JAIL
+def handle_jail(player):
+    # nog niet klaar -> dubbel rollen etc 
+    pass
+
+# PROPERTY SELLING 
+def auction_property(property):
+    # nog niet klaar -> wanneer speler property moet verkopen ivm geen gel
+    pass
+
+# PROPERTY DEVELOPMENT 
+def develop_property(property):
+    # nog niet klaar -> houses/ hotels
+    pass
 
