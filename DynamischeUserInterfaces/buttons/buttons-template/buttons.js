@@ -3,11 +3,27 @@ let countButton1 = 0;
 let countButton2 = 0;
 let countButton3 = 0;
 
+let lastClickedButton = null; // button 2 exercise
+
+
 function clickEvent(event) {
   const container = event.target.parentElement;
 
+  // last clicked check + achtergrond kleur
+  if (lastClickedButton !== null) {
+    lastClickedButton.style.backgroundColor = "green";
+    lastClickedButton.disabled = false;
+  }
+
   // verwijder click classes behalve current one
   container.classList.remove("clickOne", "clickTwo", "clickThree");
+ 
+  // achtergrond rood
+  event.target.style.backgroundColor = "red";
+  event.target.disabled = true;
+
+  // last clicked update
+  lastClickedButton = event.target;
 
   // click class
   if (event.target.id === 'buttonOne') {
@@ -31,11 +47,11 @@ function clickEvent(event) {
   }
 }
 
-const button1 = document.getElementById('buttonOne');
-const button2 = document.getElementById('buttonTwo');
-const button3 = document.getElementById('buttonThree');
+// const button1 = document.getElementById('buttonOne');
+// const button2 = document.getElementById('buttonTwo');
+// const button3 = document.getElementById('buttonThree');
 
-buttonOne.onclick = clickEvent;
-buttonTwo.onclick = clickEvent;
-buttonThree.onclick = clickEvent;
+// buttonOne.onclick = clickEvent;
+// buttonTwo.onclick = clickEvent;
+// buttonThree.onclick = clickEvent;
 
