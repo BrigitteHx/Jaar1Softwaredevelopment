@@ -103,12 +103,11 @@
               colorRandomBoxes(boxColors[1], numberOfYellowBoxes);
               colorRandomBoxes(boxColors[2], numberOfRedBoxes);
 
-
               const handleidingButton = document.querySelector('.handleiding-button');
               handleidingButton.addEventListener('click', function() {
-              window.location.href = 'handleiding.pdf';
-            });
-          
+              window.open('handleiding.pdf', '_blank');
+              });
+
           });
 
           </script>
