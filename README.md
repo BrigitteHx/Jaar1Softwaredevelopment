@@ -5,8 +5,8 @@
 planning 1 - 6 2023:
 - buttons 1.0 remade [done]
 - buttons 2.0 continue [done]
-- game engine dev skills 
-- powerpoint dev skills 
+- game engine dev skills [done]
+- powerpoint dev skills [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
