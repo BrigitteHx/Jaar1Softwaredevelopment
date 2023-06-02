@@ -1,0 +1,132 @@
+<!-- CODEOPOLY -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Opoly</title>
+  <link rel="stylesheet" href="codeopoly.css">
+</head>
+<body>
+    <h1 class="title">CODE-OPOLY</h1>
+    <div class="container">
+      <div class="blue-square">
+        <div class="inner-square">
+        <script>
+
+            // ---------------------------------------------------------------------------------------------------------- boxes
+
+            const innerSquare = document.querySelector('.inner-square');
+          
+            // boxes + nummers
+            for (let i = 1; i <= 50; i++) {
+              const box = document.createElement('div');
+              box.classList.add('box');
+              box.textContent = i;
+              innerSquare.appendChild(box);
+            }
+
+            // ---------------------------------------------------------------------------------------------------------- dobbelsteen
+
+            document.addEventListener('DOMContentLoaded', function() {
+              const rollDiceButton = document.querySelector('.roll-dice-button');
+              const pawns = document.querySelectorAll('.pawn');
+              let selectedPawn = null;
+          
+              rollDiceButton.addEventListener('click', rollDice);
+          
+              function rollDice() {
+                  const randomNumber = Math.floor(Math.random() * 12) + 1;
+          
+                  alert("YOU ROLLED: " + randomNumber);
+              }
+
+// ---------------------------------------------------------------------------------------------------------- pionnen
+
+            pawns.forEach(pawn => {
+            pawn.addEventListener('mousedown', startDragging);
+            });
+
+            document.addEventListener('mouseup', stopDragging);
+
+            function startDragging(event) {
+            selectedPawn = event.target;
+            selectedPawn.style.position = 'absolute';
+            selectedPawn.style.pointerEvents = 'none';
+            document.addEventListener('mousemove', movePawn);
+            }
+
+            function stopDragging(event) {
+            if (selectedPawn) {
+                selectedPawn.style.pointerEvents = 'auto';
+                document.removeEventListener('mousemove', movePawn);
+                selectedPawn = null;
+            }
+            }
+
+            function movePawn(event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            selectedPawn.style.left = x + 'px';
+            selectedPawn.style.top = y + 'px';
+            }
+
+              // ---------------------------------------------------------------------------------------------------------- willekeurige vakjes kleuren
+
+              const boxes = document.querySelectorAll('.box');
+              const numberOfGreenBoxes = 10;
+              const numberOfYellowBoxes = 5;
+              const numberOfRedBoxes = 2;
+
+              const boxColors = ['green', 'yellow', 'red'];
+
+              function colorRandomBoxes(color, count) {
+                const randomIndexes = getRandomIndexes(count, boxes.length);
+                randomIndexes.forEach(index => {
+                  boxes[index].style.backgroundColor = color;
+                });
+              }
+
+              function getRandomIndexes(count, max) {
+                const indexes = [];
+                while (indexes.length < count) {
+                  const randomIndex = Math.floor(Math.random() * max);
+                  if (!indexes.includes(randomIndex)) {
+                    indexes.push(randomIndex);
+                  }
+                }
+                return indexes;
+              }
+
+              colorRandomBoxes(boxColors[0], numberOfGreenBoxes);
+              colorRandomBoxes(boxColors[1], numberOfYellowBoxes);
+              colorRandomBoxes(boxColors[2], numberOfRedBoxes);
+
+
+              const handleidingButton = document.querySelector('.handleiding-button');
+              handleidingButton.addEventListener('click', function() {
+              window.location.href = 'handleiding.pdf';
+            });
+          
+          });
+
+          </script>
+      </div>
+    </div>
+    <div class="buttons-container">
+        <button class="button roll-dice-button">ROLL DICE</button>
+        <button class="button">LADDER KAART</button>
+        <button class="button">PUNTEN KAART</button>
+        <button class="button handleiding-button">SPEL HANDLEIDING</button>
+    </div>
+  </div>
+  <div class="pawns-container">
+    <div class="pawn">Pion 1</div>
+    <div class="pawn">Pion 2</div>
+    <div class="pawn">Pion 3</div>
+    <div class="pawn">Pion 4</div>
+    <div class="pawn">Pion 5</div>
+  </div>
+</body>
+</html>

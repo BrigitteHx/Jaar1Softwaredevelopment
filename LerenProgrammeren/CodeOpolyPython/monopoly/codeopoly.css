@@ -1,0 +1,108 @@
+.buttons-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+  
+.button {
+    margin: 0 7.5px;
+    padding: 10px 20px;
+    background-color: lightblue;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+}
+  
+.button:hover {
+    background-color: skyblue;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+
+.pawns-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+  
+.pawn {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+.container {
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3em;
+    color: white;
+    z-index: 1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blue-square {
+    width: 80%;
+    height: 80%;
+    background-color: lightblue;
+    border: 10px solid darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-square {
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+    padding: 5px;
+    border: 1px solid white;
+}
+
+.box {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
