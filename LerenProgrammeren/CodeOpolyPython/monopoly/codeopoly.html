@@ -7,15 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Code Opoly</title>
   <link rel="stylesheet" href="codeopoly.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <h1 class="title">CODE-OPOLY</h1>
     <div class="container">
       <div class="blue-square">
         <div class="inner-square">
         <script>
 
-            // ---------------------------------------------------------------------------------------------------------- boxes
+            // ---------------------------------------------------------------------------------------------------------- BOXES
 
             const innerSquare = document.querySelector('.inner-square');
           
@@ -27,7 +29,7 @@
               innerSquare.appendChild(box);
             }
 
-            // ---------------------------------------------------------------------------------------------------------- dobbelsteen
+            // ---------------------------------------------------------------------------------------------------------- DOBBELSTEEN
 
             document.addEventListener('DOMContentLoaded', function() {
               const rollDiceButton = document.querySelector('.roll-dice-button');
@@ -42,7 +44,7 @@
                   alert("YOU ROLLED: " + randomNumber);
               }
 
-// ---------------------------------------------------------------------------------------------------------- pionnen
+            // ---------------------------------------------------------------------------------------------------------- PIONNEN
 
             pawns.forEach(pawn => {
             pawn.addEventListener('mousedown', startDragging);
@@ -72,7 +74,7 @@
             selectedPawn.style.top = y + 'px';
             }
 
-              // ---------------------------------------------------------------------------------------------------------- willekeurige vakjes kleuren
+              // ---------------------------------------------------------------------------------------------------------- VAKJES KLEUREN
 
               const boxes = document.querySelectorAll('.box');
               const numberOfGreenBoxes = 10;
@@ -121,11 +123,11 @@
     </div>
   </div>
   <div class="pawns-container">
-    <div class="pawn">Pion 1</div>
-    <div class="pawn">Pion 2</div>
-    <div class="pawn">Pion 3</div>
-    <div class="pawn">Pion 4</div>
-    <div class="pawn">Pion 5</div>
+    <div class="pawn"><i class="fas fa-robot blue-color fa-2x"></i></div>
+    <div class="pawn"><i class="fas fa-robot green-color fa-2x"></i></div>
+    <div class="pawn"><i class="fas fa-robot teal-color fa-2x"></i></div>
+    <div class="pawn"><i class="fas fa-robot yellow-color fa-2x"></i></div>
+    <div class="pawn"><i class="fas fa-robot red-color fa-2x"></i></div>
   </div>
 </body>
 </html>

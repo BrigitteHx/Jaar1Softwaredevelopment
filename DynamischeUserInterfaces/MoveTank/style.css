@@ -4,7 +4,15 @@
 }
 
 #image {
+	position: absolute;
 	height: 80px;
 	width: 80px;
-	background: url('tank.png') 80px 0px;
+	background: url('tank.png') 0px 0px;
+}
+
+#demo{
+	position:absolute;
+	left: 0px;
+	top: 0px;
+	margin: 10px;
 }
