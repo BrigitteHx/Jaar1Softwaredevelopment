@@ -5,7 +5,7 @@
 planning 6 - 6 2023:
 
 - tank opdracht [done]
-- buttons 3
+- buttons 3 [done]
 - begin back end 2 OF continue python meester proef
 
 --------------------------------------------------------------------------------------------------------------------------------------------
