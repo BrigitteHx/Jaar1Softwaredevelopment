@@ -13,7 +13,6 @@ class colors:
     WHITE = '\033[97m'
     RESET = '\033[0m'
 
-
 # IMPORT -----------------------------------------------------------------------------------------------------------
 
 from kladLingo import *
@@ -21,32 +20,32 @@ import random
 
 # TITLE SCREEN WORKING ---------------------------------------------------------------------------------------------
 
-def title_screen_options():
+def titleScreenOptions():
     option = input("> ")
     if option.lower() == "play":
         lingo()
     elif option.lower() == "quit":
         exit()
     elif option.lower() == "help":
-        help_menu()
+        helpMenu()
     else:
         print("Invalid answer, please try again.")
-        title_screen_options()
+        titleScreenOptions()
 
 
 # TITLE SCREEN LOOK ---------------------------------------------------------------------------------------------
 
-def title_screen():
+def titleScreen():
     print(colors.BLUE + "                 WELCOME TO LINGO                  \n" + colors.RESET)
     print(colors.CYAN + "                 > PLAY                  \n" + colors.RESET)
     print(colors.CYAN + "                 > HELP                  \n" + colors.RESET)
     print(colors.CYAN + "                 > QUIT                  \n" + colors.RESET)
-    title_screen_options()
+    titleScreenOptions()
 
 
 # HELP MENU ----------------------------------------------------------------------------------------------------
 
-def help_menu():
+def helpMenu():
     print("\nHELP: \n")
     print("Raad het ENGELSE 5-letterige woord voordat de pogingen op zijn.\n")
     print("Als een geraden letter goed is én op de juiste plek zal er een X staan.\nAls de letter in het woord zit maar niet op de juiste plek zal er een O staan.\n")
@@ -56,7 +55,7 @@ def help_menu():
     print(colors.CYAN + "                 > PLAY                  \n" + colors.RESET)
     print(colors.CYAN + "                 > HELP                  \n" + colors.RESET)
     print(colors.CYAN + "                 > QUIT                  \n" + colors.RESET)
-    title_screen_options()
+    titleScreenOptions()
 
 
 # WORD ----------------------------------------------------------------------------------------------------
@@ -83,13 +82,11 @@ def pickWord():
 def lingo():
     chosenWord = pickWord()
     letters = list(chosenWord)
-    X = (colors.RED + "X" + colors.RESET)
-    O = (colors.YELLOW + "O" + colors.RESET)
 
     guessAttempts = 0
 
     while guessAttempts < 5:
-        # print(chosenWord)
+        print(chosenWord)
         guess = input("Voer je woord in: ").lower()
 
         if len(guess) != 5:
@@ -107,7 +104,7 @@ def lingo():
         # controleer "X"
         for i, letter in enumerate(guess):
             if letter == letters[i]:
-                resultGuess += X
+                resultGuess += "X"
                 checkedLetters.append(letter)
             else:
                 resultGuess += "_"
@@ -117,7 +114,7 @@ def lingo():
             if letter in checkedLetters:
                 continue  # skip letters die al "X" zijn
             elif letter in letters:
-                resultGuess = resultGuess[:i] + O + resultGuess[i + 1:]
+                resultGuess = resultGuess[:i] + "O" + resultGuess[i + 1:]
 
         print("Feedback:", resultGuess)
         print("Raad pogingen over:", 5 - guessAttempts, "\n")

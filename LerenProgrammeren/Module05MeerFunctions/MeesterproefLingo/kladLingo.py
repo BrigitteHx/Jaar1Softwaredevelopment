@@ -72,3 +72,16 @@
 # De ingebouwde functie enumerate() in Python wordt gebruikt om iteraties over een sequentie 
 # (zoals een lijst, een tuple, een string, enz.) te doorlopen en tegelijkertijd zowel de index als het element op die index te verkrijgen. 
 # Het retourneert een iterator die tuples produceert met twee elementen: de index en het overeenkomstige element.
+
+
+class colors:
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    BLUE = '\033[94m'
+    MAGENTA = '\033[95m'
+    CYAN = '\033[96m'
+    WHITE = '\033[97m'
+    RESET = '\033[0m'
+
+# print(len(colors.RED))
