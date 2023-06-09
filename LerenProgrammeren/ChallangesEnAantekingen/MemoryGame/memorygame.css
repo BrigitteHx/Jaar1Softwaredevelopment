@@ -34,3 +34,13 @@ img {
     width: 75px;
     height: 75px;
 }
+
+.title {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3em;
+    color: white;
+    z-index: 1;
+}
