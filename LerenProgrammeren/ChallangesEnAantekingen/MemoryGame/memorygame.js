@@ -1,33 +1,45 @@
-// memory game JS
-
-let imageLijst = ['imagecat', 'imagechicken', 'imagecow', 'imagedog', 'iimagedonkey', 'imagegoat', 'imagehorse', 'imagepig', 'imagerabbit', 'imagesheep'];
-imageLijst = shuffle(imageLijst);
-
-// shuffelen 
 function shuffle(array) {
-  let currentIndex = array.length, randomIndex;
-
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    return array.sort(() => Math.random() - 0.5);
   }
-
-  return array;
-}
-
-// plaatjes
-function addImages() {
-  const images = document.getElementById('images');
-
-  for (let i = 0; i < imageLijst.length; i++) {
+  
+  const animalCards = ['cat','chicken','cow','dog','donkey','goat','horse','pig','rabbit','sheep'];
+  let firstCard, secondCard;
+  
+  const buttonsContainer = document.getElementById('buttons');
+  const firstCards = document.createElement('div');
+  const secondCards = document.createElement('div');
+  
+  shuffle(animalCards).forEach((animal) => {
+    const button = document.createElement('button');
+    button.id = animal;
     const image = document.createElement('img');
+    image.src = 'images/background.png';
+  
+    button.addEventListener('click', function () {
+      image.src = `images/${animal}.png`;
+      firstCard = button.id;
+    //   console.log(firstCard);
+    });
+  
+    button.appendChild(image);
+    firstCards.appendChild(button);
+  });
+  
+  shuffle([...animalCards]).forEach((animal) => {
+    const button = document.createElement('button');
+    button.id = animal;
+    const image = document.createElement('img');
+    image.src = 'images/background.png';
+  
+    button.addEventListener('click', function () {
+      image.src = `images/${animal}.png`;
+      secondCard = button.id;
+    });
+  
+    button.appendChild(image);
+    secondCards.appendChild(button);
+  });
+  
+  buttonsContainer.append(firstCards, secondCards);  
 
-  }
-}
-
-// function startGame() {
-//   addImages();
-// }
-
+// button.innerText = animal;
