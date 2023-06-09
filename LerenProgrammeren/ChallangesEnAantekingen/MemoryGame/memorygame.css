@@ -9,12 +9,28 @@
 body {
     height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(128, 190, 128);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    margin: 10px;
 }
 
 img {
     width: 75px;
     height: 75px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
 }

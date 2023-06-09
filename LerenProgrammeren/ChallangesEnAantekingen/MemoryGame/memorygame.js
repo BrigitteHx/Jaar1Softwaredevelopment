@@ -6,8 +6,13 @@ function shuffle(array) {
   let firstCard, secondCard;
   
   const buttonsContainer = document.getElementById('buttons');
+  
   const firstCards = document.createElement('div');
+  firstCards.classList.add('card-container');
+  
   const secondCards = document.createElement('div');
+  secondCards.classList.add('card-container');
+  
   
   shuffle(animalCards).forEach((animal) => {
     const button = document.createElement('button');
