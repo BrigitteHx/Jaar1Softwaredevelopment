@@ -7,6 +7,7 @@ planning 9 - 6 2023:
 
 - python meesterproef continue 
 - assesment continue [done]
+- CJV 24 & CJV 25 dynamische user intefaces [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
