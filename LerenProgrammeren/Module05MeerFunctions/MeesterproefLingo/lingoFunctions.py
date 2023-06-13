@@ -111,8 +111,8 @@ def lingo():
 
         # controleer "O"
         for i, letter in enumerate(guess):
-            if letter in checkedLetters:
-                continue  # skip letters die al "X" zijn
+            if letter in checkedLetters or letter == letters[i]:
+                continue  # skip letters die al "X" zijn of op de juiste plek staan
             elif letter in letters:
                 resultGuess = resultGuess[:i] + "O" + resultGuess[i + 1:]
 
@@ -122,4 +122,5 @@ def lingo():
     if guessAttempts >= 5:
         print("Sorry, je hebt geen pogingen meer over.")
         print("Het woord was:", chosenWord)
+
 
