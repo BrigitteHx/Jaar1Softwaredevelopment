@@ -1,11 +1,19 @@
 # Jaar1Softwaredevelopment
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+planning 14 - 6 2023:
+
+- python meesterproef continue [done]
+- JS meesterproef continue 
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 planning 13 - 6 2023:
 
-- python meesterproef continue 
-- JS meesterproef continue 
+- python meesterproef continue [done]
+- JS meesterproef continue [done] 
 
 tijd over:
 - backend
