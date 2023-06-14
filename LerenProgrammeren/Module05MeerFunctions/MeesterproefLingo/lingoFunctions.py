@@ -13,6 +13,9 @@ class colors:
     WHITE = '\033[97m'
     RESET = '\033[0m'
 
+x = (colors.RED + "X" + colors.RESET)
+o = (colors.RED + "O" + colors.RESET)
+
 # IMPORT -----------------------------------------------------------------------------------------------------------
 
 from kladLingo import *
@@ -80,7 +83,7 @@ def pickWord():
 
 # LINGO ----------------------------------------------------------------------------------------------------
 
-def lingo():
+# def lingo():
     # chosenWord = pickWord()
     # # letters = list(chosenWord)
 
@@ -124,30 +127,42 @@ def lingo():
     #     print("Sorry, je hebt geen poging meer over.")
     #     print("Het woord was:", chosenWord)
 
+def lingo():
     chosenWord = pickWord()
-
     guessAttempts = 0 
 
     while guessAttempts < 5:
         print(chosenWord)
 
+        chosenWordCopy = list(chosenWord)  # kopie 
+
         guess = input("Voer je woord in: ").lower()
         resultGuess = [""] * len(guess)
 
         if len(guess) != 5:
-          print(colors.RED + "Niet goed, je woord moet 5 letters lang zijn. Probeer opnieuw." + colors.RESET)
-          continue
+            print(colors.RED + "Niet goed, je woord moet 5 letters lang zijn. Probeer opnieuw." + colors.RESET)
+            continue
 
         if guess == chosenWord:
             print(colors.GREEN + "Gefeliciteerd, dat is juist!" + colors.RESET)
             break
 
+        # check X's
         for i in range(len(guess)):
             if guess[i] == chosenWord[i]:
-                resultGuess[i] = "O"
-            elif guess[i] in chosenWord:
                 resultGuess[i] = "X"
-            else:
+                chosenWordCopy[i] = "." # vervangt index met . 
+
+        # check O's
+        for i in range(len(guess)):
+            if resultGuess[i] == "":
+                if guess[i] in chosenWordCopy:
+                    resultGuess[i] = "O"
+                    chosenWordCopy[chosenWordCopy.index(guess[i])] = "." # vervangt index met ook .
+
+        # rest wordt "_"
+        for i in range(len(guess)):
+            if resultGuess[i] == "":
                 resultGuess[i] = "_"
 
         print("Feedback:", resultGuess)
@@ -157,6 +172,3 @@ def lingo():
     if guessAttempts >= 5:
         print("Sorry, je hebt geen poging meer over.")
         print("Het woord was:", chosenWord)
-
-
-
