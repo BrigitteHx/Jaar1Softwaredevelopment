@@ -84,48 +84,48 @@ def pickWord():
 # LINGO ----------------------------------------------------------------------------------------------------
 
 # def lingo():
-    # chosenWord = pickWord()
-    # # letters = list(chosenWord)
+#     chosenWord = pickWord()
+#     # letters = list(chosenWord)
 
-    # guessAttempts = 0
+#     guessAttempts = 0
 
-    # while guessAttempts < 5:
-    #     print(chosenWord)
-    #     guess = input("Voer je woord in: ").lower()
+#     while guessAttempts < 5:
+#         print(chosenWord)
+#         guess = input("Voer je woord in: ").lower()
 
-    #     if len(guess) != 5:
-    #         print("Niet goed, je woord moet 5 letters lang zijn. Probeer opnieuw.")
-    #         continue
+#         if len(guess) != 5:
+#             print("Niet goed, je woord moet 5 letters lang zijn. Probeer opnieuw.")
+#             continue
 
-    #     if guess == chosenWord:
-    #         print("Gefeliciteerd, dat is juist!")
-    #         break
+#         if guess == chosenWord:
+#             print("Gefeliciteerd, dat is juist!")
+#             break
 
-    #     guessAttempts += 1
-    #     resultGuess = ""
-    #     checkedLetters = []
+#         guessAttempts += 1
+#         resultGuess = ""
+#         checkedLetters = []
 
-    #     # controleer "X"
-    #     for i, letter in enumerate(guess):
-    #         if letter == letters[i]:
-    #             resultGuess += "X"
-    #             checkedLetters.append(letter) # ipv string -> array gebruiken ivm append tricky met dubbel letters zie 115 [""],[""],[""]
-    #         else:
-    #             resultGuess += "_"
+#         # controleer "X"
+#         for i, letter in enumerate(guess):
+#             if letter == letters[i]:
+#                 resultGuess += "X"
+#                 checkedLetters.append(letter) # ipv string -> array gebruiken ivm append tricky met dubbel letters zie 115 [""],[""],[""]
+#             else:
+#                 resultGuess += "_"
 
-    #     # controleer "O"
-    #     for i, letter in enumerate(guess):
-    #         if letter in checkedLetters or letter == letters[i]: # TENZIJ er 2 klinkers in staan, ex; "cheer" -> bij guess eeexx = O_X__
-    #             continue  # skip letters die al "X" zijn of op de juiste plek staan
-    #         elif letter in letters:
-    #             resultGuess = resultGuess[:i] + "O" + resultGuess[i + 1:]
+#         # controleer "O"
+#         for i, letter in enumerate(guess):
+#             if letter in checkedLetters or letter == letters[i]: # TENZIJ er 2 klinkers in staan, ex; "cheer" -> bij guess eeexx = O_X__
+#                 continue  # skip letters die al "X" zijn of op de juiste plek staan
+#             elif letter in letters:
+#                 resultGuess = resultGuess[:i] + "O" + resultGuess[i + 1:]
 
-    #     print("Feedback:", resultGuess)
-    #     print("Raad pogingen over:", 5 - guessAttempts, "\n")
+#         print("Feedback:", resultGuess)
+#         print("Raad pogingen over:", 5 - guessAttempts, "\n")
 
-    # if guessAttempts >= 5:
-    #     print("Sorry, je hebt geen poging meer over.")
-    #     print("Het woord was:", chosenWord)
+#     if guessAttempts >= 5:
+#         print("Sorry, je hebt geen poging meer over.")
+#         print("Het woord was:", chosenWord)
 
 def lingo():
     chosenWord = pickWord()
