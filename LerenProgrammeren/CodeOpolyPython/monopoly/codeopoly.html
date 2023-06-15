@@ -15,7 +15,7 @@
     <div class="container">
       <div class="blue-square">
         <div class="inner-square">
-        <script>
+          <script>
 
             // ---------------------------------------------------------------------------------------------------------- BOXES
 
@@ -44,35 +44,35 @@
                   alert("YOU ROLLED: " + randomNumber);
               }
 
-            // ---------------------------------------------------------------------------------------------------------- PIONNEN
+              // ---------------------------------------------------------------------------------------------------------- PIONNEN
 
-            pawns.forEach(pawn => {
-            pawn.addEventListener('mousedown', startDragging);
-            });
+              pawns.forEach(pawn => {
+                pawn.addEventListener('mousedown', startDragging);
+              });
 
-            document.addEventListener('mouseup', stopDragging);
+              document.addEventListener('mouseup', stopDragging);
 
-            function startDragging(event) {
-            selectedPawn = event.target;
-            selectedPawn.style.position = 'absolute';
-            selectedPawn.style.pointerEvents = 'none';
-            document.addEventListener('mousemove', movePawn);
-            }
+              function startDragging(event) {
+                selectedPawn = event.target;
+                selectedPawn.style.position = 'absolute';
+                selectedPawn.style.pointerEvents = 'none';
+                document.addEventListener('mousemove', movePawn);
+              }
 
-            function stopDragging(event) {
-            if (selectedPawn) {
-                selectedPawn.style.pointerEvents = 'auto';
-                document.removeEventListener('mousemove', movePawn);
-                selectedPawn = null;
-            }
-            }
+              function stopDragging(event) {
+                if (selectedPawn) {
+                  selectedPawn.style.pointerEvents = 'auto';
+                  document.removeEventListener('mousemove', movePawn);
+                  selectedPawn = null;
+                }
+              }
 
-            function movePawn(event) {
-            const x = event.clientX;
-            const y = event.clientY;
-            selectedPawn.style.left = x + 'px';
-            selectedPawn.style.top = y + 'px';
-            }
+              function movePawn(event) {
+                const x = event.clientX;
+                const y = event.clientY;
+                selectedPawn.style.left = x + 'px';
+                selectedPawn.style.top = y + 'px';
+              }
 
               // ---------------------------------------------------------------------------------------------------------- VAKJES KLEUREN
 
@@ -107,27 +107,78 @@
 
               const handleidingButton = document.querySelector('.handleiding-button');
               handleidingButton.addEventListener('click', function() {
-              window.open('handleiding.pdf', '_blank');
+                window.open('handleiding.pdf', '_blank');
               });
+
+              const ladderKaartButton = document.querySelector('.ladder-kaart-button');
+              ladderKaartButton.addEventListener('click', stelVraag);
+
+              var vragen = [
+                { vraag: "Wat is een Variable? \n1. Variabelen zijn containers die bedoeld zijn om dingen niet binnen te houden.\n2. Variabelen zijn containers voor het opslaan van gegevenswaarden.\n3.Een variabele in een python-programma geeft gegevens aan de computer voor verwerking.", 
+                  antwoord: "2" },
+                
+                { vraag: "Wat is een String? \n1. Strings is een nummer. \n2.Strings is een zin of een word. \n3.String is een decimaal getal", 
+                  antwoord: "2" },
+
+                { vraag: "Wat doet een input? \n1. Een bepaalde tekst in een tekst toevoegen. \n2.Een vraag stellen aan de gebruiker. \n3.Een vraag stellen aan de programmeur ", 
+                  antwoord: "1" },
+
+                { vraag: "Wat doet een elif? \n1. Een voorwaarde om iets te checken. \n2. Een input om een vraag te stellen. \n3.Als de vorige voorwaarden niet waar waren, probeer dan deze. \n4.Geen van de bovenste.", 
+                  antwoord: "3" },
+
+                { vraag: "Welke van deze is een float? \n1. 4 \n2. 5,443 \n3. 3.59 \n4. 20093", 
+                  antwoord: "3" },
+
+                { vraag: "Welke operator geeft aan dat het getal a gelijk is aan getal b? \n1. a = b \n2. a != b \n3. a += b \n4. a == b", 
+                  antwoord: "4" },
+
+                { vraag: "Wat betekent a > b \n1. a is klijner dan b \n2. a is groter dan b \n3. a is gelijk aan of klijner dan b  \n4. a is gelijk aan of groter dan b", 
+                  antwoord: "2" },
+
+                { vraag: "Welke van de volgende is een dictionary: \n1. { } \n2. [] \n3. () \n4. <>", 
+                  antwoord: "1" },
+
+                { vraag: "Welke van de volgende is de juiste extensie van een Python-bestand? \n1. .python \n2. .py \n3. .pl \n4. .p", 
+                  antwoord: "2" },
+
+                { vraag: "Welk trefwoord wordt gebruikt voor functie in Python? \n1. function \n2. fun \n3. define \n4. def", 
+                  antwoord: "4" },
+
+                ];
+
+              function stelVraag() {
+                var randomIndex = Math.floor(Math.random() * vragen.length);
+                var vraag = vragen[randomIndex].vraag;
+                var juistAntwoord = vragen[randomIndex].antwoord;
+              
+                var antwoord = prompt(vraag);
+
+                if (antwoord && antwoord.toLowerCase() === juistAntwoord.toLowerCase()) {
+                  alert("Juist!");
+                } else {
+                  alert("Onjuist");
+                }
+              }
 
           });
           
           </script>
+        </div>
+      </div>
+      <div class="buttons-container">
+          <button class="button roll-dice-button">ROLL DICE</button>
+          <button class="button ladder-kaart-button">LADDER KAART</button>
+          <button class="button">PUNTEN KAART</button>
+          <button class="button handleiding-button">SPEL HANDLEIDING</button>
       </div>
     </div>
-    <div class="buttons-container">
-        <button class="button roll-dice-button">ROLL DICE</button>
-        <button class="button">LADDER KAART</button>
-        <button class="button">PUNTEN KAART</button>
-        <button class="button handleiding-button">SPEL HANDLEIDING</button>
+    <div class="pawns-container">
+      <div class="pawn"><i class="fas fa-robot blue-color fa-2x"></i></div>
+      <div class="pawn"><i class="fas fa-robot green-color fa-2x"></i></div>
+      <div class="pawn"><i class="fas fa-robot teal-color fa-2x"></i></div>
+      <div class="pawn"><i class="fas fa-robot yellow-color fa-2x"></i></div>
+      <div class="pawn"><i class="fas fa-robot red-color fa-2x"></i></div>
     </div>
-  </div>
-  <div class="pawns-container">
-    <div class="pawn"><i class="fas fa-robot blue-color fa-2x"></i></div>
-    <div class="pawn"><i class="fas fa-robot green-color fa-2x"></i></div>
-    <div class="pawn"><i class="fas fa-robot teal-color fa-2x"></i></div>
-    <div class="pawn"><i class="fas fa-robot yellow-color fa-2x"></i></div>
-    <div class="pawn"><i class="fas fa-robot red-color fa-2x"></i></div>
-  </div>
-</body>
+  </body>
 </html>
+

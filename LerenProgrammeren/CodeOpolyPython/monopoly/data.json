@@ -1,0 +1,48 @@
+easy_questions = [
+    {
+   
+
+
+
+    },{
+        "question" : "Welk trefwoord wordt gebruikt voor functie in Python?",
+        "chocies" : "1. function \n2. fun \n3. define \n4. def",
+        "answer" : "4"
+    },{
+        "question" : "Welke van de volgende is niet een core data-type in Python?",
+        "chocies" : "1. list \n2. class \n3. tuple \n4. dictionary",
+        "answer" : "2"
+    },{
+        "question" : "Welke van de volgende is een tuple:",
+        "chocies" : "1. { } \n2. [] \n3. () \n4. <>",
+        "answer" : "3"
+    },{
+        "question" : "Wat is de output van \nprint(4 + 2 * 2)",
+        "chocies" : "1. 12 \n2. 8 \n3. 6 \n4. 4 + 2 * 2",
+        "answer" : "2"
+    },{
+        "question" : "Welke antwoord is niet een keyword?",
+        "chocies" : "1. both \n2. not \n3. or \n4. none ",
+        "answer" : "1"
+    },{
+        "question" : "Wat gebeurt er als je een 'break' in een while loop zet?",
+        "chocies" : "1. de while loop loopt nog 1 keer en stopt \n2. de while loop stopt \n3.de while loop gaat verder \n4. Niks :)",
+        "answer" : "2"
+    },{
+        "question" : " Wat doet een random.shuffle?",
+        "chocies" : "1. het geeft een random geselecteerd element uit een opgegeven reeks \n2. het reorganiseert de volgorde van de items.",
+        "answer" : "2"
+    },{
+        "question" : "Wat is de output van het volgende stukje code? \nabc = 'ABC zijn de eerste Drie letters van het alfabet.' \nprint(abc.lower())",
+        "chocies" : "1. Abc zijn de eerste drie letters van het alfabet. \n2. ABC zijn de eerste drie letters van het alfabet. \n3. abc zijn de eerste drie letters van het alfabet.\n4. ABC zijn de eerste Drie letters van het alfabet.",
+        "answer" : "3"
+    },{
+        "question" : "Wat doet een len?",
+        "chocies" : "1. geeft het aantal items in een object terug \n2. geeft het lengte van een object terug \n3.geeft het aantal letters in een object terug",
+        "answer" : "1"
+    },{
+        "question" : "Wanneer wordt het Final-blok uitgevoerd in een exception handling?",
+        "chocies" : "1. wanneer er geen uitzondering is \n2. altijd \n3. wanneer er een uitzondering is\n4. alleen als aan een bepaalde voorwaarde is voldaan",
+        "answer" : "2"
+    }
+]
