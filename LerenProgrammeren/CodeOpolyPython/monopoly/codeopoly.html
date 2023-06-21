@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,148 +10,228 @@
   <link rel="stylesheet" href="codeopoly.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <h1 class="title">CODE-OPOLY</h1>
-    <div class="container">
-      <div class="blue-square">
-        <div class="inner-square">
-          <script>
+  <h1 class="title">CODE-OPOLY</h1>
+  <div class="container">
+    <div class="blue-square">
+      <div class="inner-square">
+        <script>
+          // ---------------------------------------------------------------------------------------------------------- BOXES
 
-            // ---------------------------------------------------------------------------------------------------------- BOXES
+          const innerSquare = document.querySelector('.inner-square');
 
-            const innerSquare = document.querySelector('.inner-square');
-          
-            // boxes + nummers
-            for (let i = 1; i <= 50; i++) {
-              const box = document.createElement('div');
-              box.classList.add('box');
-              box.textContent = i;
-              innerSquare.appendChild(box);
+          // boxes + nummers
+          for (let i = 1; i <= 50; i++) {
+            const box = document.createElement('div');
+            box.classList.add('box');
+            box.textContent = i;
+            innerSquare.appendChild(box);
+          }
+
+          // ---------------------------------------------------------------------------------------------------------- DOBBELSTEEN
+
+          document.addEventListener('DOMContentLoaded', function () {
+            const rollDiceButton = document.querySelector('.roll-dice-button');
+            const pawns = document.querySelectorAll('.pawn');
+            let selectedPawn = null;
+
+            rollDiceButton.addEventListener('click', rollDice);
+
+            function rollDice() {
+              const randomNumber = Math.floor(Math.random() * 12) + 1;
+
+              alert("YOU ROLLED: " + randomNumber);
             }
 
-            // ---------------------------------------------------------------------------------------------------------- DOBBELSTEEN
+            // ---------------------------------------------------------------------------------------------------------- PIONNEN
 
-            document.addEventListener('DOMContentLoaded', function() {
-              const rollDiceButton = document.querySelector('.roll-dice-button');
-              const pawns = document.querySelectorAll('.pawn');
-              let selectedPawn = null;
-          
-              rollDiceButton.addEventListener('click', rollDice);
-          
-              function rollDice() {
-                  const randomNumber = Math.floor(Math.random() * 12) + 1;
-          
-                  alert("YOU ROLLED: " + randomNumber);
+            pawns.forEach(pawn => {
+              pawn.addEventListener('mousedown', startDragging);
+            });
+
+            document.addEventListener('mouseup', stopDragging);
+
+            function startDragging(event) {
+              selectedPawn = event.target;
+              selectedPawn.style.position = 'absolute';
+              selectedPawn.style.pointerEvents = 'none';
+              document.addEventListener('mousemove', movePawn);
+            }
+
+            function stopDragging(event) {
+              if (selectedPawn) {
+                selectedPawn.style.pointerEvents = 'auto';
+                document.removeEventListener('mousemove', movePawn);
+                selectedPawn = null;
               }
+            }
 
-              // ---------------------------------------------------------------------------------------------------------- PIONNEN
+            function movePawn(event) {
+              const x = event.clientX;
+              const y = event.clientY;
+              selectedPawn.style.left = x + 'px';
+              selectedPawn.style.top = y + 'px';
+            }
 
-              pawns.forEach(pawn => {
-                pawn.addEventListener('mousedown', startDragging);
+            // ---------------------------------------------------------------------------------------------------------- VAKJES KLEUREN
+
+            const boxes = document.querySelectorAll('.box');
+            const numberOfGreenBoxes = 10;
+            const numberOfYellowBoxes = 5;
+            const numberOfRedBoxes = 2;
+
+            const boxColors = ['green', 'yellow', 'red'];
+
+            function colorRandomBoxes(color, count) {
+              const randomIndexes = getRandomIndexes(count, boxes.length);
+              randomIndexes.forEach(index => {
+                boxes[index].style.backgroundColor = color;
               });
+            }
 
-              document.addEventListener('mouseup', stopDragging);
-
-              function startDragging(event) {
-                selectedPawn = event.target;
-                selectedPawn.style.position = 'absolute';
-                selectedPawn.style.pointerEvents = 'none';
-                document.addEventListener('mousemove', movePawn);
-              }
-
-              function stopDragging(event) {
-                if (selectedPawn) {
-                  selectedPawn.style.pointerEvents = 'auto';
-                  document.removeEventListener('mousemove', movePawn);
-                  selectedPawn = null;
+            function getRandomIndexes(count, max) {
+              const indexes = [];
+              while (indexes.length < count) {
+                const randomIndex = Math.floor(Math.random() * max);
+                if (!indexes.includes(randomIndex)) {
+                  indexes.push(randomIndex);
                 }
               }
+              return indexes;
+            }
 
-              function movePawn(event) {
-                const x = event.clientX;
-                const y = event.clientY;
-                selectedPawn.style.left = x + 'px';
-                selectedPawn.style.top = y + 'px';
+            colorRandomBoxes(boxColors[0], numberOfGreenBoxes);
+            colorRandomBoxes(boxColors[1], numberOfYellowBoxes);
+            colorRandomBoxes(boxColors[2], numberOfRedBoxes);
+
+            const handleidingButton = document.querySelector('.handleiding-button');
+            handleidingButton.addEventListener('click', function () {
+              window.open('handleiding.pdf', '_blank');
+            });
+
+            // ---------------------------------------------------------------------------------------------------------- QUIZ VRAGEN
+
+            const quizVragenButton = document.querySelector('.quiz-vragen-button');
+            quizVragenButton.addEventListener('click', stelVraag);
+
+            var spelers = [];
+
+            var vragen = [
+              {
+                vraag: "Wat is een Variable? \n1. Variabelen zijn containers die bedoeld zijn om dingen niet binnen te houden.\n2. Variabelen zijn containers voor het opslaan van gegevenswaarden.\n3.Een variabele in een python-programma geeft gegevens aan de computer voor verwerking.",
+                antwoord: "2"
+              },
+
+              {
+                vraag: "Wat is een String? \n1. Strings is een nummer. \n2.Strings is een zin of een word. \n3.String is een decimaal getal",
+                antwoord: "2"
+              },
+
+              {
+                vraag: "Wat doet een input? \n1. Een bepaalde tekst in een tekst toevoegen. \n2.Een vraag stellen aan de gebruiker. \n3.Een vraag stellen aan de programmeur ",
+                antwoord: "1"
+              },
+
+              {
+                vraag: "Wat doet een elif? \n1. Een voorwaarde om iets te checken. \n2. Een input om een vraag te stellen. \n3.Als de vorige voorwaarden niet waar waren, probeer dan deze. \n4.Geen van de bovenste.",
+                antwoord: "3"
+              },
+
+              {
+                vraag: "Welke van deze is een float? \n1. 4 \n2. 5,443 \n3. 3.59 \n4. 20093",
+                antwoord: "3"
+              },
+
+              {
+                vraag: "Welke operator geeft aan dat het getal a gelijk is aan getal b? \n1. a = b \n2. a != b \n3. a += b \n4. a == b",
+                antwoord: "4"
+              },
+
+              {
+                vraag: "Wat betekent a > b \n1. a is klijner dan b \n2. a is groter dan b \n3. a is gelijk aan of klijner dan b  \n4. a is gelijk aan of groter dan b",
+                antwoord: "2"
+              },
+
+              {
+                vraag: "Welke van de volgende is een dictionary: \n1. { } \n2. [] \n3. () \n4. <>",
+                antwoord: "1"
+              },
+
+              {
+                vraag: "Welke van de volgende is de juiste extensie van een Python-bestand? \n1. .python \n2. .py \n3. .pl \n4. .p",
+                antwoord: "2"
+              },
+
+              {
+                vraag: "Welk trefwoord wordt gebruikt voor functie in Python? \n1. function \n2. fun \n3. define \n4. def",
+                antwoord: "4"
+              },
+            ];
+
+            var vragen2 = [
+              {
+                vraag: "Wat is een van de meest gebruikte programmeertalen voor webontwikkeling? \n1. java \n2. python \n3. C++ \n4. javascript",
+                antwoord: "4"
+              },
+
+              {
+                vraag: "Wat is de uitvoer van de volgende code in Python? \n x = 5   print(x * 5) \n1.  Hello Hello Hello Hello Hello \n2. 5 \n3. Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello \n4. Het zal een fout genereren",
+                antwoord: "3"
+              },
+
+              {
+                vraag: "Wat is het doel van een for-lus in de meeste programmeertalen? \n1.Het controleren van voorwaarden \n2. Het toewijzen van waarden aan variabelen \n 3. Het herhalen van een blok code \n 4. Het definiëren van functies",
+                antwoord: "3"
+              },
+
+              {
+                vraag: "Wat betekent het acroniem 'HTML' in webontwikkeling?\n1. HyperText Markup Language\n2. High Technical Machine Learning\n3. Hierarchical Text Manipulation Library\n4. Home Tool Management Language",
+                antwoord: "1"
+              },
+
+              {
+                vraag: "Wat is een 'boolean' in programmeren?\n1. Een datatypen dat wordt gebruikt om numerieke waarden op te slaan.\n2. Een taal die wordt gebruikt voor het definiëren van webpagina's.\n3. Een set instructies die een bepaalde taak uitvoeren.\n4. Een datatypen dat waar of onwaar (true of false) kan zijn.",
+                antwoord: "4"
+              },
+
+              {
+                vraag: "Wat is het verschil tussen een compiler en een interpreter?\n1. Een compiler vertaalt code naar machinetaal, terwijl een interpreter de code regel voor regel uitvoert.\n2. Een compiler voert de code direct uit, terwijl een interpreter eerst een tussentijdse representatie maakt.\n3. Een compiler wordt gebruikt voor statische talen, terwijl een interpreter wordt gebruikt voor dynamische talen.\n4. Er is geen verschil; de termen worden door elkaar gebruikt.",
+                antwoord: "1"
               }
+            ];
 
-              // ---------------------------------------------------------------------------------------------------------- VAKJES KLEUREN
+            var vragen3 = [
 
-              const boxes = document.querySelectorAll('.box');
-              const numberOfGreenBoxes = 10;
-              const numberOfYellowBoxes = 5;
-              const numberOfRedBoxes = 2;
+            {
+              vraag: "Wat is het verschil tussen 'null' en 'undefined' in JavaScript?\n1. 'null' geeft aan dat een variabele niet is toegewezen, terwijl 'undefined' aangeeft dat een variabele is toegewezen maar geen waarde heeft.\n2. 'null' wordt gebruikt voor objecten, terwijl 'undefined' wordt gebruikt voor functies.\n3. 'null' en 'undefined' zijn synoniemen en kunnen onderling uitwisselbaar worden gebruikt.\n4. 'null' geeft aan dat een variabele is toegewezen maar geen waarde heeft, terwijl 'undefined' aangeeft dat een variabele niet is toegewezen.",
+              antwoord: "1"
+            },
 
-              const boxColors = ['green', 'yellow', 'red'];
+            {
+              vraag: "Wat is het concept van 'inheritance' (overerving) in objectgeoriënteerd programmeren?\n1. Het proces waarbij een object de eigenschappen en methoden van een ander object overneemt.\n2. Het samenvoegen van meerdere objecten tot één geheel.\n3. Het beperken van de toegang tot bepaalde eigenschappen en methoden van een object.\n4. Het opnieuw definiëren van een bestaande klasse om extra functionaliteit toe te voegen.",
+              antwoord: "1"
+            },
 
-              function colorRandomBoxes(color, count) {
-                const randomIndexes = getRandomIndexes(count, boxes.length);
-                randomIndexes.forEach(index => {
-                  boxes[index].style.backgroundColor = color;
-                });
-              }
+            {
+              vraag: "Wat is een 'lambda-functie' in programmeertalen zoals Python?\n1. Een functie die alleen bestaat in het lambda-programmeerparadigma.\n2. Een anonieme functie die kort en bondig wordt gedefinieerd.\n3. Een functie die wordt gebruikt voor wiskundige berekeningen met complexe getallen.\n4. Een functie die wordt gebruikt voor het genereren van willekeurige getallen.",
+              antwoord: "2"
+            },
 
-              function getRandomIndexes(count, max) {
-                const indexes = [];
-                while (indexes.length < count) {
-                  const randomIndex = Math.floor(Math.random() * max);
-                  if (!indexes.includes(randomIndex)) {
-                    indexes.push(randomIndex);
-                  }
-                }
-                return indexes;
-              }
+            {
+              vraag: "Wat is het doel van het 'git' versiebeheersysteem?\n1. Het creëren van grafische gebruikersinterfaces (GUI's) voor applicaties.\n2. Het bouwen en testen van softwaretoepassingen.\n3. Het beheren en bijhouden van wijzigingen in broncodebestanden.\n4. Het uitvoeren van geautomatiseerde code-analyses en optimalisaties.",
+              antwoord: "3"
+            }
+            ];
 
-              colorRandomBoxes(boxColors[0], numberOfGreenBoxes);
-              colorRandomBoxes(boxColors[1], numberOfYellowBoxes);
-              colorRandomBoxes(boxColors[2], numberOfRedBoxes);
-
-              const handleidingButton = document.querySelector('.handleiding-button');
-              handleidingButton.addEventListener('click', function() {
-                window.open('handleiding.pdf', '_blank');
-              });
-
-              const ladderKaartButton = document.querySelector('.ladder-kaart-button');
-              ladderKaartButton.addEventListener('click', stelVraag);
-
-              var vragen = [
-                { vraag: "Wat is een Variable? \n1. Variabelen zijn containers die bedoeld zijn om dingen niet binnen te houden.\n2. Variabelen zijn containers voor het opslaan van gegevenswaarden.\n3.Een variabele in een python-programma geeft gegevens aan de computer voor verwerking.", 
-                  antwoord: "2" },
-                
-                { vraag: "Wat is een String? \n1. Strings is een nummer. \n2.Strings is een zin of een word. \n3.String is een decimaal getal", 
-                  antwoord: "2" },
-
-                { vraag: "Wat doet een input? \n1. Een bepaalde tekst in een tekst toevoegen. \n2.Een vraag stellen aan de gebruiker. \n3.Een vraag stellen aan de programmeur ", 
-                  antwoord: "1" },
-
-                { vraag: "Wat doet een elif? \n1. Een voorwaarde om iets te checken. \n2. Een input om een vraag te stellen. \n3.Als de vorige voorwaarden niet waar waren, probeer dan deze. \n4.Geen van de bovenste.", 
-                  antwoord: "3" },
-
-                { vraag: "Welke van deze is een float? \n1. 4 \n2. 5,443 \n3. 3.59 \n4. 20093", 
-                  antwoord: "3" },
-
-                { vraag: "Welke operator geeft aan dat het getal a gelijk is aan getal b? \n1. a = b \n2. a != b \n3. a += b \n4. a == b", 
-                  antwoord: "4" },
-
-                { vraag: "Wat betekent a > b \n1. a is klijner dan b \n2. a is groter dan b \n3. a is gelijk aan of klijner dan b  \n4. a is gelijk aan of groter dan b", 
-                  antwoord: "2" },
-
-                { vraag: "Welke van de volgende is een dictionary: \n1. { } \n2. [] \n3. () \n4. <>", 
-                  antwoord: "1" },
-
-                { vraag: "Welke van de volgende is de juiste extensie van een Python-bestand? \n1. .python \n2. .py \n3. .pl \n4. .p", 
-                  antwoord: "2" },
-
-                { vraag: "Welk trefwoord wordt gebruikt voor functie in Python? \n1. function \n2. fun \n3. define \n4. def", 
-                  antwoord: "4" },
-
-                ];
-
-              function stelVraag() {
+            function stelVraag() {
+              var spelerNaam = prompt("Geef de naam van de speler:");
+              if (spelerNaam) {
                 var randomIndex = Math.floor(Math.random() * vragen.length);
                 var vraag = vragen[randomIndex].vraag;
                 var juistAntwoord = vragen[randomIndex].antwoord;
-              
+
                 var antwoord = prompt(vraag);
 
                 if (antwoord && antwoord.toLowerCase() === juistAntwoord.toLowerCase()) {
@@ -158,27 +239,30 @@
                 } else {
                   alert("Onjuist");
                 }
+
+                spelers.push(spelerNaam);
+                console.log(spelers);
+              } else {
+                alert("Voer een naam in voor de speler.");
               }
+            }
 
           });
-          
-          </script>
-        </div>
-      </div>
-      <div class="buttons-container">
-          <button class="button roll-dice-button">ROLL DICE</button>
-          <button class="button ladder-kaart-button">LADDER KAART</button>
-          <button class="button">PUNTEN KAART</button>
-          <button class="button handleiding-button">SPEL HANDLEIDING</button>
+        </script>
       </div>
     </div>
-    <div class="pawns-container">
-      <div class="pawn"><i class="fas fa-robot blue-color fa-2x"></i></div>
-      <div class="pawn"><i class="fas fa-robot green-color fa-2x"></i></div>
-      <div class="pawn"><i class="fas fa-robot teal-color fa-2x"></i></div>
-      <div class="pawn"><i class="fas fa-robot yellow-color fa-2x"></i></div>
-      <div class="pawn"><i class="fas fa-robot red-color fa-2x"></i></div>
+    <div class="buttons-container">
+      <button class="button roll-dice-button">ROLL DICE</button>
+      <button class="button quiz-vragen-button">QUIZ VRAGEN</button>
+      <button class="button handleiding-button">SPEL HANDLEIDING</button>
     </div>
-  </body>
+  </div>
+  <div class="pawns-container">
+    <div class="pawn"><i class="fas fa-robot blue-color fa-2x"></i></div>
+    <div class="pawn"><i class="fas fa-robot green-color fa-2x"></i></div>
+    <div class="pawn"><i class="fas fa-robot teal-color fa-2x"></i></div>
+    <div class="pawn"><i class="fas fa-robot yellow-color fa-2x"></i></div>
+    <div class="pawn"><i class="fas fa-robot red-color fa-2x"></i></div>
+  </div>
+</body>
 </html>
-
