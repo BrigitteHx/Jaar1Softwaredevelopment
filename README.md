@@ -2,23 +2,30 @@
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
+planning 23 - 6 2023:
+
+- javascript meesterproef afmaken [DONEE!] 
+- burgerschap opdracht [done]
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 planning 22 - 6 2023:
 
-- javascript meesterproef afmaken
-- burgerschap opdracht
+- javascript meesterproef afmaken [done]
+- burgerschap opdracht [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 planning 21 - 6 2023:
 
-- javascript meesterproef afmaken
+- javascript meesterproef afmaken [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 planning 15 - 6 2023:
 
 - python meesterproef oplevering + laatste CJV [DONE!!]
-- JS meesterproef continue
+- JS meesterproef continue [done]
 - begin backend 2
 
 --------------------------------------------------------------------------------------------------------------------------------------------
