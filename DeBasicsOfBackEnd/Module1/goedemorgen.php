@@ -91,7 +91,7 @@ body.night {
             if( $currentTime >= '06:00' && $currentTime < '12:00'){
                 return 'morning.png';
 
-            } else if ($currentTime >= '12:00' && $currentTime < '18:00'){
+            }else if ($currentTime >= '12:00' && $currentTime < '18:00'){
                 return 'afternoon.png';
 
             }else if ($currentTime >= '18:00' && $currentTime < '00:00'){
@@ -111,15 +111,18 @@ body.night {
         <title>Goedemorgen</title>
 
         <style>
-     
             body {
                 background-image: url('<?php echo pictures(); ?>');
                 background-repeat: no-repeat;
                 background-size: 100%;
             }
             .containter {
-                position: absolute;
-                color: white;  
+                color: white;
+
+                /* midden */
+                width: 250px;
+                margin: auto;
+
             }
         </style>
     </head>
@@ -127,7 +130,7 @@ body.night {
     <body>
         <div class="containter">
 
-            <h1> <?php echo greeting();?> </h1>
+            <h1><?php echo greeting();?></h1>
             
         </div>
     </body>
