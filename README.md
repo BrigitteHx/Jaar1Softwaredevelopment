@@ -2,6 +2,19 @@
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
+planning 28 - 6 2023:
+
+- CJV BE1 [done]
+- door met backend 2
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+planning 27 - 6 2023:
+
+- back end 1 afmaken [done]
+  
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 planning 23 - 6 2023:
 
 - javascript meesterproef afmaken [DONEE!] 
@@ -26,7 +39,7 @@ planning 15 - 6 2023:
 
 - python meesterproef oplevering + laatste CJV [DONE!!]
 - JS meesterproef continue [done]
-- begin backend 2
+- begin backend 2 [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -43,13 +56,13 @@ planning 13 - 6 2023:
 - JS meesterproef continue [done] 
 
 tijd over:
-- backend
+- backend [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 planning 9 - 6 2023:
 
-- python meesterproef continue 
+- python meesterproef continue [done]
 - assesment continue [done]
 - CJV 24 & CJV 25 dynamische user intefaces [done]
 
@@ -66,7 +79,7 @@ planning 6 - 6 2023:
 
 - tank opdracht [done]
 - buttons 3 [done]
-- begin back end 2 OF continue python meester proef
+- begin back end 2 OF continue python meester proef [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -118,7 +131,7 @@ planning 23 - 5 2023:
 - rekenen alle lessen af [done] 
 
 tijd over:
-- start buttons 2.0 
+- start buttons 2.0 [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -126,7 +139,7 @@ planning 17 - 5 2023:
 
 - ijssalon [done]
 - stage voorbereiding [done]
-- rekenlessen door 
+- rekenlessen door [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -147,8 +160,8 @@ planning 11 - 5 2023:
 tijd over:
 
 - dev skills:
-  + Player Menu game digitalisering 
-- rekenen lessen door 
+  + Player Menu game digitalisering [done]
+- rekenen lessen door [done]
  
 --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -169,8 +182,8 @@ planning 9 - 5 2023:
 
 planning 26 - 4 2023:
 
- - CV afmaken
- - planning rest vakantie maken (rekentoets, rekenen, engels voorbereiding, softskills, ijssalon re-work, leerpaden progress) 
+ - CV afmaken [done]
+ - planning rest vakantie maken (rekentoets, rekenen, engels voorbereiding, softskills, ijssalon re-work, leerpaden progress) [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -187,7 +200,7 @@ planning 21 - 4 2023:
 planning 19 - 4 2023:
 
  - leren programmeren:
-   + Dry ijssalon update afmaken 
+   + Dry ijssalon update afmaken [done]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
