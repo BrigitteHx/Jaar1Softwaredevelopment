@@ -1,0 +1,37 @@
+<soepen>
+    <soep>
+        <soort>groentesoep</soort>
+        <temperatuur>75</temperatuur>
+        <isvegatarisch>true</isvegatarisch>
+        <ingredient>wortelen</ingredient>
+        <bestek>lepel</bestek>
+    </soep>
+    <soep>
+        <soort>tomatensoep</soort>
+        <temperatuur>80</temperatuur>
+        <isvegatarisch>true</isvegatarisch>
+        <ingredient>tomaat</ingredient>
+        <bestek>lepel</bestek>
+    </soep>
+    <soep>
+        <soort>kippensoep</soort>
+        <temperatuur>75</temperatuur>
+        <isvegatarisch>true</isvegatarisch>
+        <ingredient>kip</ingredient>
+        <bestek>lepel</bestek>
+    </soep>
+    <soep>
+        <soort>champignonsoep</soort>
+        <temperatuur>80</temperatuur>
+        <isvegatarisch>true</isvegatarisch>
+        <ingredient>champignon</ingredient>
+        <bestek>lepel</bestek>
+    </soep>
+    <soep>
+        <soort>erwtensoep</soort>
+        <temperatuur>75</temperatuur>
+        <isvegatarisch>true</isvegatarisch>
+        <ingredient>erwten</ingredient>
+        <bestek>lepel</bestek>
+    </soep>
+</soepen>
