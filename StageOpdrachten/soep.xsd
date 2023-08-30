@@ -1,0 +1,30 @@
+<schema>
+    <simpleType name="soort">
+        <restriction>
+            <enumeration value="groentesoep"/>
+            <enumeration value="tomatensoep"/>
+            <enumeration value="kippensoep"/>
+            <enumeration value="champignonsoep"/>
+            <enumeration value="erwtensoep"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="temperatuur">
+        <restriction>
+            <minInclusive value="0"/>
+            <maxInclusive value="100"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="soep">
+        <sequence>
+            <element name="soort" type="soort"/>
+            <element name="temperatuur" type="temperatuur"/>
+            <element name="isvegatarisch" type="boolean"/>
+            <element name="ingredient" type="string"/>
+            <element name="bestek" fixed="lepel"/>
+        </sequence>
+    </complexType>
+
+    <element name="soep" type="soep"/>
+</schema>
