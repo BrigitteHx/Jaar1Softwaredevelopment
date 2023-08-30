@@ -1,30 +1,37 @@
-<schema>
-    <simpleType name="soort">
-        <restriction>
-            <enumeration value="groentesoep"/>
-            <enumeration value="tomatensoep"/>
-            <enumeration value="kippensoep"/>
-            <enumeration value="champignonsoep"/>
-            <enumeration value="erwtensoep"/>
-        </restriction>
-    </simpleType>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://example.com/soep" xmlns="http://example.com/soep">
 
-    <simpleType name="temperatuur">
-        <restriction>
-            <minInclusive value="0"/>
-            <maxInclusive value="100"/>
-        </restriction>
-    </simpleType>
+    <xs:simpleType name="soort">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="groentesoep"/>
+            <xs:enumeration value="tomatensoep"/>
+            <xs:enumeration value="kippensoep"/>
+            <xs:enumeration value="champignonsoep"/>
+            <xs:enumeration value="erwtensoep"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <complexType name="soep">
-        <sequence>
-            <element name="soort" type="soort"/>
-            <element name="temperatuur" type="temperatuur"/>
-            <element name="isvegatarisch" type="boolean"/>
-            <element name="ingredient" type="string"/>
-            <element name="bestek" fixed="lepel"/>
-        </sequence>
-    </complexType>
+    <xs:simpleType name="temperatuur">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <element name="soep" type="soep"/>
-</schema>
+    <xs:complexType name="soep">
+        <xs:sequence>
+            <xs:element name="soort" type="soort"/>
+            <xs:element name="temperatuur" type="temperatuur"/>
+            <xs:element name="isvegatarisch" type="xs:boolean"/>
+            <xs:element name="ingredient" type="xs:string"/>
+            <xs:element name="bestek" fixed="lepel"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="soepen">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="soep" type="soep" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
