@@ -57,13 +57,13 @@ soup_data = {}
 for soup_elem in xml_tree.xpath("//soep"):
     soort = soup_elem.findtext("soort")
     temperatuur = soup_elem.findtext("temperatuur")
-    is_vegetarian = soup_elem.findtext("isvegatarisch")
+    isvegetarisch = soup_elem.findtext("isvegatarisch")
     ingredient = soup_elem.findtext("ingredient")
     bestek = soup_elem.findtext("bestek")
     
     soup_data[soort] = {
         "temperatuur": temperatuur,
-        "is_vegetarian": is_vegetarian,
+        "isvegatarisch": isvegetarisch,
         "ingredient": ingredient,
         "bestek": bestek
     }
@@ -74,7 +74,7 @@ user_choice = input("Which soup would you like to see? ")
 if user_choice in soup_data:
     print(f"Soup: {user_choice}")
     print(f"Temperature: {soup_data[user_choice]['temperatuur']} C")
-    print(f"Vegetarian: {'Yes' if soup_data[user_choice]['is_vegetarian'] == 'true' else 'No'}")
+    print(f"Vegetarian: {'Yes' if soup_data[user_choice]['isvegatarisch'] == 'true' else 'No'}")
     print(f"Ingredient: {soup_data[user_choice]['ingredient']}")
     print(f"Bestek: {soup_data[user_choice]['bestek']}")
 else:
