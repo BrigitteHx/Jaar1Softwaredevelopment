@@ -44,12 +44,13 @@ xsd_schema = etree.XMLSchema(xsd_tree)
 # Laden XML 
 xml_tree = etree.parse("datasoep.xml")
 
-# Valideren XML met XSD --> internet 
+# ---------------------------------------- internet -> Valideren XML met XSD 
 # if xsd_schema.validate(xml_tree):
 #     print("XML data is valid according to the XSD schema.")
 # else:
 #     print("XML data is not valid according to the XSD schema.")
 #     print(xsd_schema.error_log)
+# ----------------------------------------
 
 # Dict voor soep data
 soup_data = {}
