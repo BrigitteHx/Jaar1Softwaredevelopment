@@ -39,12 +39,14 @@ from lxml import etree
 
 # Laden XSD 
 xsd_tree = etree.parse("soep.xsd")
+
+# Entree module voor xpath 
 xsd_schema = etree.XMLSchema(xsd_tree)
 
 # Laden XML 
 xml_tree = etree.parse("datasoep.xml")
 
-# ---------------------------------------- internet -> Valideren XML met XSD 
+# ---------------------------------------- internet -> Valideren XML met XSD niet werkend gekregen  
 # if xsd_schema.validate(xml_tree):
 #     print("XML data is valid according to the XSD schema.")
 # else:
@@ -54,6 +56,8 @@ xml_tree = etree.parse("datasoep.xml")
 
 # Dict voor soep data
 soup_data = {}
+
+# Voor elk element/ soort soep haalt informatie hiervan op uit XML met xpath en slaat deze op in dict
 for soup_elem in xml_tree.xpath("//soep"):
     soort = soup_elem.findtext("soort")
     temperatuur = soup_elem.findtext("temperatuur")
@@ -68,15 +72,18 @@ for soup_elem in xml_tree.xpath("//soep"):
         "bestek": bestek
     }
 
+# User input welke soep wordt getoont
 user_choice = input("Which soup would you like to see? ")
 
-# Soep printen als user choice goed is 
+# Wanneer user input in soep data staat, zal info worden geprint
 if user_choice in soup_data:
     print(f"Soup: {user_choice}")
     print(f"Temperature: {soup_data[user_choice]['temperatuur']} C")
     print(f"Vegetarian: {'Yes' if soup_data[user_choice]['isvegatarisch'] == 'true' else 'No'}")
     print(f"Ingredient: {soup_data[user_choice]['ingredient']}")
     print(f"Bestek: {soup_data[user_choice]['bestek']}")
+
+# Wanneer user input NIET in soep data staat, print fout
 else:
     print("Soep niet gevonden")
 
