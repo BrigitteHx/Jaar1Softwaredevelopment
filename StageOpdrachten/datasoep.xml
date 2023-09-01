@@ -34,4 +34,13 @@
         <ingredient>erwten</ingredient>
         <bestek>lepel</bestek>
     </soep>
+    <!-- <soep>
+        <soort>testsoep</soort>
+        <temperatuur>75</temperatuur>
+        <isvegatarisch>true</isvegatarisch>
+        <ingredient>aardbeien</ingredient>
+        <bestek>lepel</bestek>
+    </soep> -->
 </soepen>
+
+<!-- note : zomaar iets toevoegen werkt wel, zie uitgevlagde testsoep -->
