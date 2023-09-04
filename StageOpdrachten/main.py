@@ -29,7 +29,6 @@ if xsd.is_valid(xml_data):
 else:
     print("XML klopt niet vergeleken schema.")
 
-
 # ---------------------------------------- test want dict deed het eerst niet (nu wel)
 # person_data = xsd.to_dict(xml_data)
 # print(person_data) 
